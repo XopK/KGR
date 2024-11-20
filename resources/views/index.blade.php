@@ -154,90 +154,115 @@
                 <div class="col-lg-12">
                     <!-- Testimonial Slider -->
                     <div class="testimonial-slider owl-carousel owl-theme">
+
                         <!-- Testimonial 01 -->
                         <div class="item">
                             <div class="block shadow">
-                                <!-- Speech -->
-                                <p>
-                                    Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec sollicitudin
-                                    molestie malesuada.
-                                    Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus.
-                                    Lorem ipsum dolor
-                                    sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta dapibus.
-                                    Quisque velit nisi,
-                                    pretium ut lacinia in, elementum id enim.
+                                <!-- Image -->
+                                <a href="{{ route('lessons') }}">
+                                    <img src="https://placehold.it/300x200" class="card-img-top" alt="Product Image">
+                                </a>
+
+                                <!-- Product Title -->
+                                <h5 class="card-title h3 mt-3">Название курса</h5>
+
+                                <!-- Category Badge Below Title -->
+                                <span class="badge badge-primary mb-3">Категория</span>
+
+
+                                <!-- Description -->
+                                <p class="mb-3">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deserunt eligendi
+                                    eveniet libero molestiae sequi sunt veniam? Aspernatur, assumenda atque distinctio
+                                    eligendi esse facere necessitatibus nobis, odio quia rerum veniam!
                                 </p>
-                                <!-- Person Thumb -->
-                                <div class="image">
-                                    <img src="images/testimonial/feature-testimonial-thumb.jpg" alt="image">
-                                </div>
-                                <!-- Name and Company -->
-                                <cite>Abraham Linkon , Themefisher.com</cite>
+
+                                <!-- Button to Product -->
+                                <a href="{{ route('lessons') }}" class="btn btn-primary">Перейти к курсу</a>
                             </div>
                         </div>
+
                         <!-- Testimonial 01 -->
                         <div class="item">
                             <div class="block shadow">
-                                <!-- Speech -->
-                                <p>
-                                    Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec sollicitudin
-                                    molestie malesuada.
-                                    Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus.
-                                    Lorem ipsum dolor
-                                    sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta dapibus.
-                                    Quisque velit nisi,
-                                    pretium ut lacinia in, elementum id enim.
+                                <!-- Image -->
+                                <a href="{{ route('lessons') }}">
+                                    <img src="https://placehold.it/300x200" class="card-img-top" alt="Product Image">
+                                </a>
+
+                                <!-- Product Title -->
+                                <h5 class="card-title h3 mt-3">Название курса</h5>
+
+                                <!-- Category Badge Below Title -->
+                                <span class="badge badge-primary mb-3">Категория</span>
+
+
+                                <!-- Description -->
+                                <p class="mb-3">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deserunt eligendi
+                                    eveniet libero molestiae sequi sunt veniam? Aspernatur, assumenda atque distinctio
+                                    eligendi esse facere necessitatibus nobis, odio quia rerum veniam!
                                 </p>
-                                <!-- Person Thumb -->
-                                <div class="image">
-                                    <img src="images/testimonial/feature-testimonial-thumb.jpg" alt="image">
-                                </div>
-                                <!-- Name and Company -->
-                                <cite>Abraham Linkon , Themefisher.com</cite>
+
+                                <!-- Button to Product -->
+                                <a href="{{ route('lessons') }}" class="btn btn-primary">Перейти к курсу</a>
                             </div>
                         </div>
+
                         <!-- Testimonial 01 -->
                         <div class="item">
                             <div class="block shadow">
-                                <!-- Speech -->
-                                <p>
-                                    Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec sollicitudin
-                                    molestie malesuada.
-                                    Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus.
-                                    Lorem ipsum dolor
-                                    sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta dapibus.
-                                    Quisque velit nisi,
-                                    pretium ut lacinia in, elementum id enim.
+                                <!-- Image -->
+                                <a href="{{ route('lessons') }}">
+                                    <img src="https://placehold.it/300x200" class="card-img-top" alt="Product Image">
+                                </a>
+
+                                <!-- Product Title -->
+                                <h5 class="card-title h3 mt-3">Название курса</h5>
+
+                                <!-- Category Badge Below Title -->
+                                <span class="badge badge-primary mb-3">Категория</span>
+
+
+                                <!-- Description -->
+                                <p class="mb-3">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deserunt eligendi
+                                    eveniet libero molestiae sequi sunt veniam? Aspernatur, assumenda atque distinctio
+                                    eligendi esse facere necessitatibus nobis, odio quia rerum veniam!
                                 </p>
-                                <!-- Person Thumb -->
-                                <div class="image">
-                                    <img src="images/testimonial/feature-testimonial-thumb.jpg" alt="image">
-                                </div>
-                                <!-- Name and Company -->
-                                <cite>Abraham Linkon , Themefisher.com</cite>
+
+                                <!-- Button to Product -->
+                                <a href="{{ route('lessons') }}" class="btn btn-primary">Перейти к курсу</a>
                             </div>
                         </div>
+
                         <!-- Testimonial 01 -->
                         <div class="item">
                             <div class="block shadow">
-                                <!-- Speech -->
-                                <p>
-                                    Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec sollicitudin
-                                    molestie malesuada.
-                                    Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus.
-                                    Lorem ipsum dolor
-                                    sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta dapibus.
-                                    Quisque velit nisi,
-                                    pretium ut lacinia in, elementum id enim.
+                                <!-- Image -->
+                                <a href="{{ route('lessons') }}">
+                                    <img src="https://placehold.it/300x200" class="card-img-top" alt="Product Image">
+                                </a>
+
+                                <!-- Product Title -->
+                                <h5 class="card-title h3 mt-3">Название курса</h5>
+
+                                <!-- Category Badge Below Title -->
+                                <span class="badge badge-primary mb-3">Категория</span>
+
+
+                                <!-- Description -->
+                                <p class="mb-3">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deserunt eligendi
+                                    eveniet libero molestiae sequi sunt veniam? Aspernatur, assumenda atque distinctio
+                                    eligendi esse facere necessitatibus nobis, odio quia rerum veniam!
                                 </p>
-                                <!-- Person Thumb -->
-                                <div class="image">
-                                    <img src="images/testimonial/feature-testimonial-thumb.jpg" alt="image">
-                                </div>
-                                <!-- Name and Company -->
-                                <cite>Abraham Linkon , Themefisher.com</cite>
+
+                                <!-- Button to Product -->
+                                <a href="{{ route('lessons') }}" class="btn btn-primary">Перейти к курсу</a>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -251,7 +276,7 @@
                 <div class="col-lg-12">
                     <h2>It's time to change your mind</h2>
                     <p>Download over 2 million humans .Get <a
-                                href="https://themefisher.com/products/small-apps-free-app-landing-page-template/">Small
+                            href="https://themefisher.com/products/small-apps-free-app-landing-page-template/">Small
                             Apps</a> free forever!
                         <br>We say you won’t look back.</p>
                     <ul class="list-inline">

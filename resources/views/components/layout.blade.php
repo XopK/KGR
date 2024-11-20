@@ -33,7 +33,8 @@
 
 <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" tabindex="-1" href="{{ route('index') }}"><img src="/images/logo2.png" alt="logo"><span
+        <a class="navbar-brand d-flex align-items-center" tabindex="-1" href="{{ route('index') }}"><img
+                src="/images/logo2.png" alt="logo"><span
                 class="gradient-text">Практикум по КГР</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,63 +42,35 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active @@about">
+
+                <li class="nav-item {{ Request::routeIs('index') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('index') }}">Главная</a>
                 </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Home
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Практикум
                         <span><i class="ti-angle-down"></i></span>
                     </a>
                     <!-- Dropdown list -->
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="index.html">Homepage</a></li>
-                        <li><a class="dropdown-item" href="homepage-2.html">Homepage 2</a></li>
-                        <li><a class="dropdown-item active3" href="homepage-3.html">Homepage 3</a></li>
-
-                        <li class="dropdown dropdown-submenu dropright">
-                            <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0301" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
-
-                            <ul class="dropdown-menu" aria-labelledby="dropdown0301">
-                                <li><a class="dropdown-item" href="index.html">Submenu 11</a></li>
-                                <li><a class="dropdown-item" href="index.html">Submenu 12</a></li>
-                            </ul>
+                        <li><a class="dropdown-item" href="index.html">Основы 3D-моделирования и анимации</a></li>
+                        <li><a class="dropdown-item" href="homepage-2.html">Графика и анимация для веб-дизайна</a></li>
+                        <li><a class="dropdown-item active3" href="homepage-3.html">Цифровая живопись и концепт-арт</a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown @@pages">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Pages
-                        <span><i class="ti-angle-down"></i></span>
-                    </a>
-                    <!-- Dropdown list -->
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item @@team" href="team.html">Team</a></li>
-                        <li><a class="dropdown-item @@career" href="career.html">Career</a></li>
-                        <li><a class="dropdown-item @@blog" href="blog.html">Blog</a></li>
-                        <li><a class="dropdown-item @@blogSingle" href="blog-single.html">Blog Single</a></li>
-                        <li><a class="dropdown-item @@privacy" href="privacy-policy.html">Privacy</a></li>
-                        <li><a class="dropdown-item @@faq" href="FAQ.html">FAQ</a></li>
-                        <li><a class="dropdown-item" href="sign-in.html">Sign In</a></li>
-                        <li><a class="dropdown-item" href="sign-up.html">Sign Up</a></li>
-                        <li><a class="dropdown-item" href="404.html">404</a></li>
-                        <li><a class="dropdown-item" href="comming-soon.html">Coming Soon</a></li>
 
-                        <li class="dropdown dropdown-submenu dropleft">
-                            <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
+                <li class="nav-item ">
+                    <a class="nav-link" href="about.html">Форум</a>
+                </li>
 
-                            <ul class="dropdown-menu" aria-labelledby="dropdown0501">
-                                <li><a class="dropdown-item" href="index.html">Submenu 21</a></li>
-                                <li><a class="dropdown-item" href="index.html">Submenu 22</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                <li class="nav-item {{ Request::routeIs('blog') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('blog') }}">Статьи</a>
                 </li>
-                <li class="nav-item @@about">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item @@contact">
-                    <a class="nav-link" href="contact.html">Contact</a>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ Auth::check() ? route('account') : route('sign_in') }}">Личный
+                        кабинет</a>
                 </li>
             </ul>
         </div>
@@ -210,9 +183,6 @@
 <script src="/plugins/fancybox/jquery.fancybox.min.js"></script>
 <script src="/plugins/syotimer/jquery.syotimer.min.js"></script>
 <script src="/plugins/aos/aos.js"></script>
-<!-- google map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
-<script src="plugins/google-map/gmap.js"></script>
 
 <script src="/js/script.js"></script>
 </body>

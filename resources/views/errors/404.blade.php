@@ -33,7 +33,7 @@
 
 <section class="error-page">
     <div class="center">
-        <div class="block text-center">
+        <div class="block text-center p-3">
             <h1>404</h1>
             <h3>Упс! Страница не найдена.</h3>
             <p>Мы не можем найти страницу, которую вы ищете.
