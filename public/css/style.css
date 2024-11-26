@@ -2207,4 +2207,33 @@ hr {
     }
 }
 
+.lesson-title {
+    color: #FFFFFF !important;
+    font-size: 40px;
+}
+
+.lesson-page {
+    background-image: url('https://place-hold.it/800');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 100px 0;
+}
+
+.lesson-page .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.lesson-page .container {
+    position: relative;
+    z-index: 2;
+}
+
+
 

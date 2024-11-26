@@ -160,7 +160,7 @@
                             <div class="block shadow">
                                 <!-- Image -->
                                 <a href="{{ route('lessons') }}">
-                                    <img src="https://place-hold.it/300x200" class="card-img-top" alt="Product Image">
+                                    <img src="https://imgholder.ru/300x200" class="card-img-top" alt="Product Image">
                                 </a>
 
                                 <!-- Product Title -->
@@ -187,7 +187,7 @@
                             <div class="block shadow">
                                 <!-- Image -->
                                 <a href="{{ route('lessons') }}">
-                                    <img src="https://place-hold.it/300x200" class="card-img-top" alt="Product Image">
+                                    <img src="https://imgholder.ru/300x200" class="card-img-top" alt="Product Image">
                                 </a>
 
                                 <!-- Product Title -->
@@ -214,7 +214,7 @@
                             <div class="block shadow">
                                 <!-- Image -->
                                 <a href="{{ route('lessons') }}">
-                                    <img src="https://place-hold.it/300x200" class="card-img-top" alt="Product Image">
+                                    <img src="https://imgholder.ru/300x200" class="card-img-top" alt="Product Image">
                                 </a>
 
                                 <!-- Product Title -->
@@ -241,7 +241,7 @@
                             <div class="block shadow">
                                 <!-- Image -->
                                 <a href="{{ route('lessons') }}">
-                                    <img src="https://place-hold.it/300x200" class="card-img-top" alt="Product Image">
+                                    <img src="https://imgholder.ru/300x200" class="card-img-top" alt="Product Image">
                                 </a>
 
                                 <!-- Product Title -->

@@ -3,19 +3,24 @@
 =            Page Title            =
 =================================-->
 
-    <section class="section page-title">
+    <section class="section page-title lesson-page mb-4"
+             style="background-image: url('https://imgholder.ru/800'); background-size: cover; background-position: center; position: relative;">
+        <div class="background-overlay"></div> <!-- background dark -->
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 m-auto">
                     <!-- Page Title -->
-                    <h1>Career</h1>
+                    <h1 class="lesson-title">Курс по Компьютерной Графике</h1>
                     <!-- Page Description -->
-                    <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo,
-                        lacinia eget consectetur sed, convallis at tellus. magna dictum porta.</p>
+                    <p style="color: #dad6d6">Изучите основы компьютерной графики, научитесь работать с графическими
+                        программами, создавать 2D
+                        и 3D изображения, а также овладейте ключевыми инструментами для создания визуальных
+                        эффектов.</p>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!--====  End of Page Title  ====-->
 
@@ -23,7 +28,7 @@
     <!--==================================
     =            Career Promo            =
     ===================================-->
-    <section class="section career-featured pt-0">
+    <section class="section career-featured pb-0">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -31,23 +36,20 @@
                         <!-- written-content -->
                         <div class="content">
                             <!-- Career heading -->
-                            <h2>Who we're looking for</h2>
+                            <h2>Инструкция по выполнению задания</h2>
                             <!-- Career Description -->
-                            <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. eget tortor risus.
-                                Vivamus magna justo, lacinia eget consectetur sed,convallis at tellus. Vivamus suscipit
-                                tortor eget felis porttitor volutpat.Curabitur arcu erat, accumsan id imperdiet et,
-                                porttitor at sem. Praesent sapien massa, convallis</p>
                         </div>
                         <!-- Promo Video -->
                         <div class="video">
                             <!-- Video Thumb -->
-                            <img class="img-fluid shadow" src="images/thumbs/promo-video-thumbnail.jpg"
+                            <img class="img-fluid shadow"
+                                 src="https://pic.rutube.ru/video/2024-10-14/ed/2f/ed2f045dab308a9b24f85d1a666e3404.jpg"
                                  alt="video-thumbnail">
                             <!-- Video Button -->
                             <div class="video-button video-box">
-                                <a href="javascript:void(0)">
-                                    <i class="ti-control-play"
-                                       data-video="https://www.youtube.com/embed/jrkvirglgaQ?autoplay=1"></i>
+                                <a href="https://rutube.ru/video/79c3fb9d30369bda7f8fb04c293500e2/"
+                                   data-fancybox="video">
+                                    <i class="ti-control-play"></i>
                                 </a>
                             </div>
                         </div>
@@ -57,35 +59,6 @@
         </div>
     </section>
     <!--====  End of Career Promo  ====-->
-
-    <!--=============================
-    =            Gallery            =
-    ==============================-->
-    <section class="gallery">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <div class="image">
-                        <img data-fancybox="gallery" href="images/gallery/gallery-01.jpg" class="img-fluid"
-                             src="images/gallery/gallery-01.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="image">
-                        <img data-fancybox="gallery" href="images/gallery/gallery-02.jpg" class="img-fluid"
-                             src="images/gallery/gallery-02.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="image">
-                        <img data-fancybox="gallery" href="images/gallery/gallery-03.jpg" class="img-fluid"
-                             src="images/gallery/gallery-03.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--====  End of Gallery  ====-->
 
     <!--===============================
     =            Fun Facts            =
@@ -307,4 +280,51 @@
         </div>
     </section>
     <!--====  End of Job lists  ====-->
+
+    <!--=============================
+    =            Gallery            =
+    ==============================-->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Галерея работ</h2>
+                    <div class="gallery-slider owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="image">
+                                <img data-fancybox="gallery" href="https://imgholder.ru/600" class="img-fluid"
+                                     src="https://imgholder.ru/600" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="image">
+                                <img data-fancybox="gallery" href="https://imgholder.ru/600" class="img-fluid"
+                                     src="https://imgholder.ru/600" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="image">
+                                <img data-fancybox="gallery" href="https://imgholder.ru/600" class="img-fluid"
+                                     src="https://imgholder.ru/600" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="image">
+                                <img data-fancybox="gallery" href="https://imgholder.ru/600" class="img-fluid"
+                                     src="https://imgholder.ru/600" alt="">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="image">
+                                <img data-fancybox="gallery" href="https://imgholder.ru/600" class="img-fluid"
+                                     src="https://imgholder.ru/600" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====  End of Gallery  ====-->
 </x-layout>
