@@ -6,7 +6,7 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/lessons', function () {
+Route::get('/lesson', function () {
     return view('practic_page');
 })->name('lessons');
 

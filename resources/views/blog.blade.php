@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-sm-8 m-auto">
                     <!-- Page Title -->
-                    <h1>Blog</h1>
+                    <h1>Статьи</h1>
                     <!-- Page Description -->
                     <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo,
                         lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum
@@ -20,50 +20,6 @@
 
     <!--====  End of Page Title  ====-->
 
-    <!--======================================
-    =            Featured Article            =
-    =======================================-->
-    <section class="section featured-article">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <article class="featured">
-                        <!-- Image -->
-                        <div class="image">
-                            <a href="blog-single.html"><img class="img-fluid" src="images/feature/featured-article.jpg"
-                                                            alt="featured-article"></a>
-                        </div>
-                        <!-- written-content -->
-                        <div class="content">
-                            <!-- Post Title -->
-                            <h2><a href="blog-single.html">Introducing New IOS App</a></h2>
-                            <!-- Tags -->
-                            <ul class="list-inline post-tag">
-                                <li class="list-inline-item">
-                                    <img class="img-fluid" src="images/testimonial/feature-testimonial-thumb.jpg"
-                                         alt="author-thumb">
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#">Thomas Johnson</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    August 8, 2017
-                                </li>
-                            </ul>
-                            <!-- Post Body -->
-                            <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. eget tortor risus.
-                                Vivamus magna justo, lacinia eget consectetur sed,convallis at tellus. Vivamus suscipit
-                                tortor eget felis porttitor volutpat.Curabitur arcu erat, accumsan id imperdiet et,
-                                porttitor at sem. Praesent sapien massa, convallis</p>
-                            <a class="btn btn-main-sm" href="blog-single.html">Read more</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--====  End of Featured Article  ====-->
     <section class="post-grid section pt-0">
         <div class="container">
             <div class="row">

@@ -90,7 +90,10 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 m-md-auto align-self-center">
                     <div class="block">
-                        <a href="index.html"><img src="images/logo-alt.png" alt="footer-logo"></a>
+                        <a class="navbar-brand d-flex align-items-center mb-4" tabindex="-1"
+                           href="{{ route('index') }}"><img
+                                src="/images/logo2.png" alt="logo"><span
+                                style="color: white">Практикум по КГР</span></a>
                         <!-- Social Site Icons -->
                         <ul class="social-icon list-inline">
                             <li class="list-inline-item">
@@ -108,44 +111,43 @@
                 <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
                     <div class="block-2">
                         <!-- heading -->
-                        <h6>Product</h6>
+                        <h6>Практикум</h6>
                         <!-- links -->
                         <ul>
-                            <li><a href="team.html">Teams</a></li>
-                            <li><a href="blog.html">Blogs</a></li>
-                            <li><a href="FAQ.html">FAQs</a></li>
+                            <li><a href="team.html">Уроки</a></li>
+                            <li><a href="blog.html">Галерея</a></li>
+                            <li><a href="FAQ.html">Тесты</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
                     <div class="block-2">
                         <!-- heading -->
-                        <h6>Resources</h6>
+                        <h6>Личный кабинет</h6>
                         <!-- links -->
                         <ul>
-                            <li><a href="sign-up.html">Singup</a></li>
-                            <li><a href="sign-in.html">Login</a></li>
-                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="sign-up.html">Регистрация</a></li>
+                            <li><a href="sign-in.html">Авторизация</a></li>
+                            <li><a href="blog.html">Профиль</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
                     <div class="block-2">
                         <!-- heading -->
-                        <h6>Company</h6>
+                        <h6>Форум</h6>
                         <!-- links -->
                         <ul>
-                            <li><a href="career.html">Career</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="team.html">Investor</a></li>
-                            <li><a href="privacy.html">Terms</a></li>
+                            <li><a href="career.html">Форум</a></li>
+                            <li><a href="contact.html">Правила</a></li>
+                            <li><a href="team.html">Создать тему</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
                     <div class="block-2">
                         <!-- heading -->
-                        <h6>Company</h6>
+                        <h6>Статьи</h6>
                         <!-- links -->
                         <ul>
                             <li><a href="about.html">About</a></li>
@@ -161,12 +163,7 @@
     <div class="text-center bg-dark py-4">
         <small class="text-secondary">Copyright &copy;
             <script>document.write(new Date().getFullYear())</script>
-            . Designed &amp; Developed by <a
-                href="https://themefisher.com/">Themefisher</a></small class="text-secondary">
-    </div>
-
-    <div class="text-center bg-dark py-1">
-        <small><p>Distributed By <a href="https://themewagon.com/">Themewagon</a></p></small class="text-secondary">
+            Практикум по КГР </small>
     </div>
 </footer>
 

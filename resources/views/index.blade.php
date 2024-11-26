@@ -129,13 +129,13 @@
                 <div class="col-lg-12">
                     <div class="content-block">
                         <!-- Heading -->
-                        <h2>Watch Our Promo Video</h2>
+                        <h2>История КГР</h2>
                         <!-- Promotional Speech -->
-                        <p>Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id
-                            imperdiet et,
-                            porttitor at sem. Vivamus </p>
+                        <p style="color: #dad6d6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+                            cupiditate delectus dolore ea eaque exercitationem, facere illum ipsa minus odit porro
+                            provident quaerat quam reiciendis, soluta suscipit ut voluptas voluptatum!</p>
                         <!-- Popup Video -->
-                        <a data-fancybox href="https://www.youtube.com/watch?v=jrkvirglgaQ">
+                        <a data-fancybox href="https://rutube.ru/video/79c3fb9d30369bda7f8fb04c293500e2/">
                             <i class="ti-control-play video"></i>
                         </a>
                     </div>
@@ -160,7 +160,7 @@
                             <div class="block shadow">
                                 <!-- Image -->
                                 <a href="{{ route('lessons') }}">
-                                    <img src="https://placehold.it/300x200" class="card-img-top" alt="Product Image">
+                                    <img src="https://place-hold.it/300x200" class="card-img-top" alt="Product Image">
                                 </a>
 
                                 <!-- Product Title -->
@@ -187,7 +187,7 @@
                             <div class="block shadow">
                                 <!-- Image -->
                                 <a href="{{ route('lessons') }}">
-                                    <img src="https://placehold.it/300x200" class="card-img-top" alt="Product Image">
+                                    <img src="https://place-hold.it/300x200" class="card-img-top" alt="Product Image">
                                 </a>
 
                                 <!-- Product Title -->
@@ -214,7 +214,7 @@
                             <div class="block shadow">
                                 <!-- Image -->
                                 <a href="{{ route('lessons') }}">
-                                    <img src="https://placehold.it/300x200" class="card-img-top" alt="Product Image">
+                                    <img src="https://place-hold.it/300x200" class="card-img-top" alt="Product Image">
                                 </a>
 
                                 <!-- Product Title -->
@@ -241,7 +241,7 @@
                             <div class="block shadow">
                                 <!-- Image -->
                                 <a href="{{ route('lessons') }}">
-                                    <img src="https://placehold.it/300x200" class="card-img-top" alt="Product Image">
+                                    <img src="https://place-hold.it/300x200" class="card-img-top" alt="Product Image">
                                 </a>
 
                                 <!-- Product Title -->
@@ -269,38 +269,4 @@
         </div>
     </section>
     <!--====  End of Testimonial  ====-->
-
-    <section class="call-to-action-app section bg-blue">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>It's time to change your mind</h2>
-                    <p>Download over 2 million humans .Get <a
-                            href="https://themefisher.com/products/small-apps-free-app-landing-page-template/">Small
-                            Apps</a> free forever!
-                        <br>We say you won’t look back.</p>
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <a href="" class="btn btn-rounded-icon">
-                                <i class="ti-apple"></i>
-                                Iphone
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="" class="btn btn-rounded-icon">
-                                <i class="ti-android"></i>
-                                Android
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="" class="btn btn-rounded-icon">
-                                <i class="ti-microsoft-alt"></i>
-                                Windows
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
 </x-layout>

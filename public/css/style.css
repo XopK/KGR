@@ -13,16 +13,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+    font-family: "Unbounded", sans-serif;
     font-size: 45px;
     line-height: 61px;
 }
 
 h2 {
+    font-family: "Unbounded", sans-serif;
     font-size: 40px;
     line-height: 50px;
 }
 
 h3 {
+    font-family: "Unbounded", sans-serif;
     font-size: 20px;
     line-height: 30px;
 }
@@ -145,7 +148,7 @@ a:hover {
 }
 
 .bg-1 {
-    background: url(../images/background/promo-video-back.jpg) fixed no-repeat;
+    background: url(../images/background/videoback.jpg) fixed no-repeat;
     background-size: cover;
 }
 
@@ -594,9 +597,6 @@ button:focus,
     }
 }
 
-.footer-main .block img {
-    margin-bottom: 20px;
-}
 
 .footer-main .block img #small-Apps {
     fill: red;
