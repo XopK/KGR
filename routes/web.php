@@ -21,3 +21,7 @@ Route::get('/sign_in', function () {
 Route::get('/sign_up', function () {
     return view('sign_up');
 })->name('sign_up');
+
+Route::get('/lesson/questions', function () {
+    return view('test_page');
+})->name('questions');

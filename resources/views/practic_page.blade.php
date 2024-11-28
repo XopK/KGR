@@ -4,7 +4,7 @@
 =================================-->
 
     <section class="section page-title lesson-page mb-4"
-             style="background-image: url('https://imgholder.ru/800'); background-size: cover; background-position: center; position: relative;">
+             style="background-image: url('https://imgholder.ru/1920x1080'); background-size: cover; background-position: center; position: relative;">
         <div class="background-overlay"></div> <!-- background dark -->
         <div class="container">
             <div class="row">
@@ -61,230 +61,119 @@
     <!--====  End of Career Promo  ====-->
 
     <!--===============================
-    =            Fun Facts            =
-    ================================-->
+=            Fun Facts            =
+===============================-->
     <section class="company-fun-facts section">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2>Some amenities for you to enjoy</h2>
+                    <h3>Шаги для выполнения задания:</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="fun-fact">
-                        <!-- Icon -->
-                        <i class="ti-timer"></i>
-                        <h3>Flexible hours</h3>
-                        <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec rutrum congue leo eget
-                            malesuada.</p>
+                <div class="col-12">
+                    <div class="instruction-text mt-4">
+                        <ol style="font-size: 18px; line-height: 1.6;">
+                            <li class="list-lesson">
+                                Просмотрите видео-инструкцию, чтобы ознакомиться с процессом выполнения задания. В видео
+                                представлены все этапы работы, начиная от подготовки материалов и заканчивая финальной
+                                проверкой результатов. Обратите внимание на детали, такие как настройки программного
+                                обеспечения и методы решения возможных проблем, которые могут возникнуть в процессе
+                                выполнения. Видео объяснит каждую деталь, чтобы вы могли уверенно приступать к
+                                выполнению задания.
+                            </li>
+                            <a href="https://imgholder.ru/1920x1080" data-fancybox>
+                                <img src="https://imgholder.ru/1920x1080" alt="Видео-инструкция"
+                                     class="image-lesson-practic img-fluid mb-3">
+                            </a>
+
+                            <li class="list-lesson">
+                                Следуйте всем указаниям в видео и применяйте на практике полученные знания. Видео
+                                содержит ключевые моменты и рекомендации, которые помогут вам эффективно и без ошибок
+                                выполнить задание. Убедитесь, что вы используете правильные инструменты и методы, а
+                                также соблюдаете последовательность шагов. Важно, чтобы вы не спешили, внимательно
+                                осматривали каждый этап и проверяли правильность выполнения каждого действия.
+                            </li>
+                            <a href="https://imgholder.ru/1920x1080" data-fancybox>
+                                <img src="https://imgholder.ru/1920x1080" alt="Шаги выполнения"
+                                     class="image-lesson-practic img-fluid mb-3">
+                            </a>
+
+                            <li class="list-lesson">
+                                После выполнения задания загрузите ваш проект в систему для проверки. Убедитесь, что вы
+                                проверили все детали работы перед отправкой. Проверьте, чтобы все файлы были на своих
+                                местах, а код или проект соответствовали предъявляемым требованиям. Не забывайте
+                                проверять корректность выполнения всех расчетов или процессов, чтобы избежать ошибок в
+                                финальной версии. Помните, что загрузка проекта — это важный момент, и его качество
+                                влияет на вашу итоговую оценку.
+                            </li>
+                            <a href="https://imgholder.ru/1920x1080" data-fancybox>
+                                <img src="https://imgholder.ru/1920x1080" alt="Проверка проекта"
+                                     class="image-lesson-practic img-fluid mb-3">
+                            </a>
+
+                            <li class="list-lesson">
+                                В случае возникновения вопросов, обратитесь к преподавателю за разъяснениями. Если
+                                что-то осталось непонятным или возникают сложности с выполнением задания, не стесняйтесь
+                                задавать вопросы. Преподаватель всегда готов помочь и разъяснить непонятные моменты. Чем
+                                раньше вы обратитесь за помощью, тем легче будет исправить ошибки и избежать
+                                недоразумений в будущем. Важно, чтобы вы не оставляли вопросы без ответа, так как это
+                                может повлиять на итоговую оценку.
+                            </li>
+                            <a href="https://imgholder.ru/1920x1080" data-fancybox>
+                                <img src="https://imgholder.ru/1920x1080" alt="Консультация с преподавателем"
+                                     class="image-lesson-practic img-fluid mb-3">
+                            </a>
+                        </ol>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="fun-fact">
-                        <!-- Icon -->
-                        <i class="ti-filter"></i>
-                        <h3>Free Snacks & Drinks</h3>
-                        <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec rutrum congue leo eget
-                            malesuada.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="fun-fact">
-                        <!-- Icon -->
-                        <i class="ti-game"></i>
-                        <h3>Gaming</h3>
-                        <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec rutrum congue leo eget
-                            malesuada.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="fun-fact">
-                        <!-- Icon -->
-                        <i class="ti-hummer"></i>
-                        <h3>4 Working Days</h3>
-                        <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec rutrum congue leo eget
-                            malesuada.</p>
-                    </div>
+
                 </div>
             </div>
         </div>
     </section>
     <!--====  End of Fun Facts  ====-->
 
-    <!--===============================
-    =            Job lists            =
-    ================================-->
-    <section class="job-list section pt-0">
+
+    {{--======== Test section ========--}}
+    <section class="test-info-section section pt-0">
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-10 m-auto">
+            <div class="row align-items-center"> <!-- Выравниваем элементы по центру вертикально -->
+                <div class="col-12 col-lg-6">
                     <div class="block">
-                        <div class="title text-center">
-                            <h2>Job Opening</h2>
+                        <div class="title">
+                            <h2>Тест по Компьютерной Графике</h2>
                         </div>
-                        <!-- Job List -->
-                        <div class="job">
-                            <div class="content">
-                                <!-- Job Title -->
-                                <h3>Andriod Developer</h3>
-                                <!-- Location -->
-                                <p>Hamburg, Germany</p>
-                            </div>
-                            <!-- Action Button -->
-                            <div class="apply-button">
-                                <a href="#" class="btn btn-main-sm" data-toggle="modal"
-                                   data-target="#android-developer">View Details</a>
-                                <!-- Modal -->
-                                <div class="modal fade jd-modal" id="android-developer" tabindex="-1">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Android Developer</h5>
-                                                <button type="button" class="close" data-dismiss="modal">
-                                                    <span>&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <!-- Location -->
-                                                <div class="block-2">
-                                                    <div class="title">
-                                                        <p>Location</p>
-                                                    </div>
-                                                    <div class="details">
-                                                        <p>Hamburg, Germany</p>
-                                                    </div>
-                                                </div>
-                                                <!-- About -->
-                                                <div class="block-2">
-                                                    <div class="title">
-                                                        <p>About You</p>
-                                                    </div>
-                                                    <div class="details">
-                                                        <p>With experience in creating visual directions for tech
-                                                            products, you are able to set the standard and lead
-                                                            designers along the way. You are not only able to execute
-                                                            beautiful user experiences yourself but communicate those
-                                                            concepts to the team and clients.</p>
-                                                    </div>
-                                                </div>
-                                                <!-- About -->
-                                                <div class="block-2">
-                                                    <div class="title">
-                                                        <p>You will need to Have</p>
-                                                    </div>
-                                                    <div class="details">
-                                                        <ul>
-                                                            <li><span class="ti-forward"></span>3+ years Development
-                                                                experience in a startup environment
-                                                            </li>
-                                                            <li><span class="ti-forward"></span>Strong knowledge of iOS,
-                                                                Android & Web Platforms
-                                                            </li>
-                                                            <li><span class="ti-forward"></span>Dynamic presentation and
-                                                                communication skills
-                                                            </li>
-                                                            <li><span class="ti-forward"></span>Self-motivation: You
-                                                                manage your own milestones, deadlines, and priorities
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <!-- Applictaion Title -->
-                                                <div class="form-title">
-                                                    <h3>Apply Now</h3>
-                                                </div>
-                                                <!-- Application Form -->
-                                                <form action="#">
-                                                    <div class="row">
-                                                        <!-- Name -->
-                                                        <div class="col-lg-6 col-md-12">
-                                                            <input class="form-control main" type="text"
-                                                                   placeholder="Name" required>
-                                                        </div>
-                                                        <!-- Email Address -->
-                                                        <div class="col-lg-6 col-md-12">
-                                                            <input class="form-control main" type="email"
-                                                                   placeholder="Email Address" required>
-                                                        </div>
-                                                        <!-- Portfolio -->
-                                                        <div class="col-lg-6 col-md-12">
-                                                            <input class="form-control main" type="text"
-                                                                   placeholder="Portfolio Website Link" required>
-                                                        </div>
-                                                        <!-- Github -->
-                                                        <div class="col-lg-6 col-md-12">
-                                                            <input class="form-control main" type="text"
-                                                                   placeholder="Github/Stackoverflow Link" required>
-                                                        </div>
-                                                        <!-- About You -->
-                                                        <div class="col-md-12">
-                                                            <textarea class="form-control main" name="about" id=""
-                                                                      rows="10"
-                                                                      placeholder="Write Something About You"></textarea>
-                                                        </div>
-                                                        <!-- Submit Button -->
-                                                        <div class="col-12 text-right">
-                                                            <button class="btn btn-main-md">Apply Now</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                        <!-- Test Description -->
+                        <div class="test-description mb-4">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum et exercitationem ipsa
+                                nulla obcaecati tempore voluptate? Ad dicta nulla qui ratione tempora. Beatae
+                                consequuntur eaque ipsum iusto quis reiciendis tenetur.</p>
                         </div>
-                        <div class="job">
-                            <div class="content">
-                                <!-- Job Title -->
-                                <h3>DevOps Engineer</h3>
-                                <!-- Location -->
-                                <p>London, United Kingdom</p>
-                            </div>
-                            <!-- Action Button -->
-                            <div class="apply-button">
-                                <a href="#" class="btn btn-main-sm" data-toggle="modal"
-                                   data-target="#android-developer">View Details</a>
-                            </div>
+
+                        <!-- Call to Action Button -->
+                        <div class="mt-4">
+                            <a href="{{ route('questions') }}" class="btn btn-main-md" target="_blank">Перейти к
+                                тесту</a>
                         </div>
-                        <div class="job">
-                            <div class="content">
-                                <!-- Job Title -->
-                                <h3>Operations Associate / Manager </h3>
-                                <!-- Location -->
-                                <p>New Jersey , USA</p>
-                            </div>
-                            <!-- Action Button -->
-                            <div class="apply-button">
-                                <a href="#" class="btn btn-main-sm" data-toggle="modal"
-                                   data-target="#android-developer">View Details</a>
-                            </div>
-                        </div>
-                        <div class="job">
-                            <div class="content">
-                                <!-- Job Title -->
-                                <h3>International Compliance Officer</h3>
-                                <!-- Location -->
-                                <p>New Jersey , USA</p>
-                            </div>
-                            <!-- Action Button -->
-                            <div class="apply-button">
-                                <a href="#" class="btn btn-main-sm" data-toggle="modal"
-                                   data-target="#android-developer">View Details</a>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Section -->
+                <div class="col-12 col-lg-6">
+                    <div class="test-image">
+                        <img src="https://imgholder.ru/1920x1080" alt="Test Image" class="img-fluid rounded">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--====  End of Job lists  ====-->
+
 
     <!--=============================
     =            Gallery            =
     ==============================-->
-    <section class="section gallery" id="gallery">
+    <section class="section gallery pt-0" id="gallery">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -292,32 +181,32 @@
                     <div class="gallery-slider owl-carousel owl-theme">
                         <div class="item">
                             <div class="image">
-                                <img data-fancybox="gallery" href="https://imgholder.ru/600" class="img-fluid"
-                                     src="https://imgholder.ru/600" alt="">
+                                <img data-fancybox="gallery" href="https://imgholder.ru/1920x1080" class="img-fluid"
+                                     src="https://imgholder.ru/1920x1080" alt="">
                             </div>
                         </div>
                         <div class="item">
                             <div class="image">
-                                <img data-fancybox="gallery" href="https://imgholder.ru/600" class="img-fluid"
-                                     src="https://imgholder.ru/600" alt="">
+                                <img data-fancybox="gallery" href="https://imgholder.ru/1920x1080" class="img-fluid"
+                                     src="https://imgholder.ru/1920x1080" alt="">
                             </div>
                         </div>
                         <div class="item">
                             <div class="image">
-                                <img data-fancybox="gallery" href="https://imgholder.ru/600" class="img-fluid"
-                                     src="https://imgholder.ru/600" alt="">
+                                <img data-fancybox="gallery" href="https://imgholder.ru/1920x1080" class="img-fluid"
+                                     src="https://imgholder.ru/1920x1080" alt="">
                             </div>
                         </div>
                         <div class="item">
                             <div class="image">
-                                <img data-fancybox="gallery" href="https://imgholder.ru/600" class="img-fluid"
-                                     src="https://imgholder.ru/600" alt="">
+                                <img data-fancybox="gallery" href="https://imgholder.ru/1920x1080" class="img-fluid"
+                                     src="https://imgholder.ru/1920x1080" alt="">
                             </div>
                         </div>
                         <div class="item">
                             <div class="image">
-                                <img data-fancybox="gallery" href="https://imgholder.ru/600" class="img-fluid"
-                                     src="https://imgholder.ru/600" alt="">
+                                <img data-fancybox="gallery" href="https://imgholder.ru/1920x1080" class="img-fluid"
+                                     src="https://imgholder.ru/1920x1080" alt="">
                             </div>
                         </div>
                     </div>
