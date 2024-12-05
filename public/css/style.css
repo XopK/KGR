@@ -406,7 +406,7 @@ button:focus,
 }
 
 .gradient-text {
-    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient colors */
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -2304,9 +2304,216 @@ hr {
 }
 
 .page-test {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
     width: 100%;
-    height: 1080px;
+    max-width: 1000px; /* Устанавливаем максимальную ширину */
+    overflow: auto; /* Включаем прокрутку, если контент выходит за пределы */
 }
+
+.progress {
+    width: 100%;
+    height: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #84ff71;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.test-container {
+    background: rgba(255, 255, 255, 0.8); /* Белый фон с прозрачностью 0.8 */
+    border-radius: 16px; /* Более круглые углы */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Глубокая тень */
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 680px;
+    margin-top: 40px;
+    backdrop-filter: blur(10px); /* Мягкий эффект размытия фона */
+    transition: all 0.3s ease;
+}
+
+.question-number {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.question-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.question-image {
+    border-radius: 20px;
+    max-width: 100%; /* Ограничиваем ширину изображения */
+    height: auto;
+    margin-bottom: 20px; /* Отступ между изображением и текстом */
+}
+
+h3.question {
+    font-size: 18px;
+    font-weight: normal;
+    color: #474747;
+    margin-bottom: 30px;
+}
+
+.answer-container {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.answer-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.answer-button {
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid #4658e6; /* Плавный переход к синему */
+    background-color: #4658e6; /* Синий фон */
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.answer-button:hover {
+    background-color: #ff6ec7; /* Розовый фон при наведении */
+    border: 2px solid #ff6ec7; /* Розовая граница */
+    transform: scale(1.05); /* Легкое увеличение кнопки */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Легкая тень при наведении */
+}
+
+
+.page-question {
+    background: linear-gradient(45deg, #ff6ec7, #ff8b4d, #ffcd56, #a875d7, #6a82fb, #9e4d7c, #fc5c7d);
+    background-size: 400% 400%;
+    animation: gradientAnimation 40s ease infinite;
+    margin: 0;
+    overflow: visible; /* Убираем ограничение на выход элементов за пределы */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .test-container {
+        padding: 30px;
+    }
+
+    .answer-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .question-number > h2 {
+        font-size: 37px;
+    }
+}
+
+#resultModal {
+    width: 40%;
+    height: 75vh;
+    color: #000000;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.result-image {
+    max-width: 400px;
+}
+
+
+#resultModal h3 {
+    color: #000000;
+    font-size: 40px;
+}
+
+.retry-btn {
+    margin-top: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.retry-btn:hover {
+    background-color: #cc7dff;
+}
+
+@media (max-width: 768px) {
+    #resultModal {
+        width: 90%;
+    }
+
+    .result-image {
+        max-width: 200px;
+    }
+
+    #resultModal h3 {
+        font-size: 30px;
+    }
+
+    .retry-btn {
+        margin-top: 10px;
+    }
+}
+
+.modal-cont {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#resultText {
+    color: #000000;
+    font-size: 19px;
+    padding: 25px 0;
+}
+
+
+
+
+
+
+
+
+
 
 
 
