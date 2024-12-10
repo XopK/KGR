@@ -120,6 +120,28 @@
             }]
         });
 
+        // Переключение на авторизацию
+        $('#authBtn').click(function () {
+            $('#authForm').removeClass('d-none');
+            $('#regForm').addClass('d-none');
+        });
+
+        // Переключение на регистрацию
+        $('#regBtn').click(function () {
+            $('#regForm').removeClass('d-none');
+            $('#authForm').addClass('d-none');
+        });
+
+        // Переход на форму регистрации из авторизации
+        $('#showRegister').click(function () {
+            $('#regBtn').click();
+        });
+
+        // Переход на форму авторизации из регистрации
+        $('#showAuth').click(function () {
+            $('#authBtn').click();
+        });
+
 
         // scroll
         // $('.scrollTo').on('click', function (e) {
@@ -131,7 +153,6 @@
         // });
 
     });
-
 })(jQuery);
 
 

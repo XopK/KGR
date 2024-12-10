@@ -37,12 +37,12 @@
                 <div class="block">
                     <!-- Image -->
                     <div class="image align-self-center"><img class="img-fluid"
-                                                              src="images/Login/front-desk-sign-in.jpg"
+                                                              src="/images/Login/front-desk-sign-in.jpg"
                                                               alt="desk-image"></div>
                     <!-- Content -->
                     <div class="content text-center">
                         <div class="logo">
-                            <a href="{{ route('index') }}"><img src="images/logo.png" alt=""></a>
+                            <a href="{{ route('index') }}"><img src="/images/logo.png" alt=""></a>
                         </div>
                         <div class="title-text">
                             <h3>Добро пожаловать! <br> Войдите в аккаунт</h3>

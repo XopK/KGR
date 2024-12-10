@@ -46,21 +46,7 @@
 
         <div class="question-content">
             <img src="https://imgholder.ru/1920x1080" alt="Вопрос" class="question-image">
-            <h3 class="question" id="questionText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque
-                autem commodi cumque debitis dolor et
-                <!doctype html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport"
-                          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-                    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-                    <title>Document</title>
-                </head>
-                <body>
-
-                </body>
-                </html>
+            <h3 class="question" id="questionText">Тест
             </h3>
         </div>
     </div>
@@ -76,16 +62,18 @@
     </div>
 </div>
 
-
+{{--Результат теста--}}
 <div style="display: none;" id="resultModal">
     <div class="modal-cont">
         <h3 class="mb-3">Результаты теста</h3>
 
-        <img src="/images/emoji/sad.png" alt="Результат" class="result-image"/>
+        <img src="/images/emoji/sad.png" alt="Результат" id="resultImage" class="result-image"/>
 
-        <p id="resultText">Вы ответили правильно на: 0 / 3 вопросов</p>
+        <p id="resultText"></p>
 
-        <button id="retryButton" class="retry-btn">Пройти тест снова</button>
+        <button id="retryButton" class="retry-btn" onclick="window.location.href = '{{ url()->previous() }}';">Вернуться
+            обратно
+        </button>
     </div>
 </div>
 

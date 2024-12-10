@@ -23,9 +23,13 @@ $(document).ready(function () {
     const answerButtons = $('.answer-button');
     const questionNumber = $('.question-number h2');
 
+    const sadImage = '/images/emoji/sad.png';
+    const happyImage = '/images/emoji/happy.png';
+
+    const checkComplete = false;
+
     /*Обновление впоросов*/
     function updateQuestion() {
-
         const current = questions[counterQuestion];
         questionText.text(current.question);
         questionNumber.text(`${counterQuestion + 1} / ${questions.length}`)
@@ -59,18 +63,20 @@ $(document).ready(function () {
             progressBar.css('width', '100%');
             console.log('Тест завершён!');
             const correctAnswers = questions.length - incorrectAnswers;
-            const resultText = `Тест завершен!<br>Правильных ответов: ${correctAnswers}<br>Неверных ответов: ${incorrectAnswers}`;
 
+            let resultImage = correctAnswers >= (questions.length / 2) ? happyImage : sadImage;
+            $('#resultImage').attr('src', resultImage);
+            $('#resultText').text(`Вы ответили правильно на: ${correctAnswers} / ${counterQuestion} вопросов`)
+
+            $.fancybox.open({
+                src: '#resultModal', type: 'inline', opts: {
+                    animationEffect: "zoom-in-out",
+                }
+            });
 
         }
     });
 
-
-    $.fancybox.open({
-        src: '#resultModal', type: 'inline', opts: {
-            animationEffect: "zoom-in-out",
-        }
-    });
     updateQuestion();
 
 });

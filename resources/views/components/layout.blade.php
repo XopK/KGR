@@ -67,11 +67,18 @@
                 <li class="nav-item {{ Request::routeIs('blog') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('blog') }}">Статьи</a>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ Auth::check() ? route('account') : route('sign_in') }}">Личный
-                        кабинет</a>
-                </li>
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ Auth::check() ? route('account') : route('sign_in') }}">Личный
+                            кабинет</a>
+                    </li>
+                @endauth
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" style="cursor: pointer;" data-toggle="modal" data-target="#authModal">Личный
+                            кабинет</a>
+                    </li>
+                @endguest
             </ul>
         </div>
     </div>
@@ -172,6 +179,8 @@
 <div class="scroll-top-to">
     <i class="ti-angle-up"></i>
 </div>
+
+<x-auth/>
 
 <!-- JAVASCRIPTS -->
 <script src="/plugins/jquery/jquery.min.js"></script>

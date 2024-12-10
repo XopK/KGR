@@ -1117,7 +1117,7 @@ button:focus,
     padding: 40px;
     text-align: center;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 .testimonial .testimonial-slider .item .block .image {
@@ -2290,7 +2290,9 @@ hr {
     }
 
     .test-info-section .title h2 {
+        margin-top: 10px;
         font-size: 19px;
+        line-height: 30px;
         text-align: center;
     }
 
@@ -2363,7 +2365,7 @@ hr {
     border-radius: 20px;
     max-width: 100%; /* Ограничиваем ширину изображения */
     height: auto;
-    margin-bottom: 20px; /* Отступ между изображением и текстом */
+    margin-bottom: 20px;
 }
 
 h3.question {
@@ -2437,6 +2439,13 @@ h3.question {
     .question-number > h2 {
         font-size: 37px;
     }
+
+    .answer-button:hover {
+        background-color: #4658e6; /* Синий фон без изменений */
+        border: 2px solid #4658e6; /* Синяя граница */
+        transform: none; /* Убираем увеличение */
+        box-shadow: none; /* Убираем тень */
+    }
 }
 
 #resultModal {
@@ -2458,11 +2467,11 @@ h3.question {
 }
 
 .retry-btn {
+    color: #FFFFFF;
     margin-top: 25px;
     padding: 10px 20px;
     font-size: 16px;
     background-color: #007bff;
-    color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -2506,10 +2515,17 @@ h3.question {
     padding: 25px 0;
 }
 
+.card-img-top {
+    border-radius: 15px;
+}
 
+.modal-auth {
+    padding: 20px;
+}
 
-
-
+.auth {
+    padding: 50px;
+}
 
 
 

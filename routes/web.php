@@ -25,3 +25,7 @@ Route::get('/sign_up', function () {
 Route::get('/lesson/questions', function () {
     return view('test_page');
 })->name('questions');
+
+Route::get('/blog/page', function () {
+    return view('blog_single');
+})->name('blog_single');

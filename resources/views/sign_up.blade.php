@@ -40,31 +40,26 @@
             <div class="col-12">
                 <div class="block">
                     <!-- Image -->
-                    <div class="image align-self-center"><img class="img-fluid" src="images/Login/sign-up.jpg"
+                    <div class="image align-self-center"><img class="img-fluid" src="/images/Login/signUp.jpg"
                                                               alt="desk-image">
                     </div>
                     <!-- Content -->
                     <div class="content text-center">
-                        <div class="logo">
-                            <a href="index.html"><img src="images/logo.png" alt=""></a>
-                        </div>
                         <div class="title-text">
-                            <h3>Sign Up for New Account</h3>
+                            <h3>Регистрация аккаунта</h3>
                         </div>
                         <form action="#">
                             <!-- Username -->
-                            <input class="form-control main" type="text" placeholder="Your Name" required>
+                            <input class="form-control main" type="text" placeholder="Имя" required>
                             <!-- Email -->
-                            <input class="form-control main" type="email" placeholder="Email Address" required>
+                            <input class="form-control main" type="email" placeholder="Почта" required>
                             <!-- Password -->
-                            <input class="form-control main" type="password" placeholder="Password" required>
+                            <input class="form-control main" type="password" placeholder="Пароль" required>
                             <!-- Submit Button -->
-                            <button class="btn btn-main-md">sign up</button>
+                            <button class="btn btn-main-md">Зарегистрироваться</button>
                         </form>
                         <div class="new-acount">
-                            <p>By clicking “Sign Up” I agree to <a href="privacy-policy.html">Terms of Conditions.</a>
-                            </p>
-                            <p>Anready have an account? <a href="{{ route('sign_in') }}">SIGN IN</a></p>
+                            <p>Уже есть аккаунт? <a href="{{ route('sign_in') }}">Войти</a></p>
                         </div>
                     </div>
                 </div>

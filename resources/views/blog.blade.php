@@ -2,25 +2,7 @@
     <!--================================
 =            Page Title            =
 =================================-->
-
-    <section class="section page-title">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 m-auto">
-                    <!-- Page Title -->
-                    <h1>Статьи</h1>
-                    <!-- Page Description -->
-                    <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo,
-                        lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum
-                        porta.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--====  End of Page Title  ====-->
-
-    <section class="post-grid section pt-0">
+    <section class="post-grid section mt-4 pt-0">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -28,12 +10,13 @@
                     <article class="post-sm">
                         <!-- Post Image -->
                         <div class="post-thumb">
-                            <a href="blog-single.html"><img class="w-100" src="images/blog/post-01.jpg"
-                                                            alt="Post-Image"></a>
+                            <a href="{{ route('blog_single') }}"><img class="w-100" src="images/blog/post-01.jpg"
+                                                                      alt="Post-Image"></a>
                         </div>
                         <!-- Post Title -->
                         <div class="post-title">
-                            <h3><a href="blog-single.html">Innovation distinguishes between a leader and a follower.</a>
+                            <h3><a href="{{ route('blog_single') }}">Innovation distinguishes between a leader and a
+                                    follower.</a>
                             </h3>
                         </div>
                         <!-- Post Meta -->
@@ -62,12 +45,13 @@
                     <article class="post-sm">
                         <!-- Post Image -->
                         <div class="post-thumb">
-                            <a href="blog-single.html"><img class="w-100" src="images/blog/post-02.jpg"
-                                                            alt="Post-Image"></a>
+                            <a href="blog_single.blade.php"><img class="w-100" src="images/blog/post-02.jpg"
+                                                                 alt="Post-Image"></a>
                         </div>
                         <!-- Post Title -->
                         <div class="post-title">
-                            <h3><a href="blog-single.html">Design is not just what it looks like and feels like. Design
+                            <h3><a href="blog_single.blade.php">Design is not just what it looks like and feels like.
+                                    Design
                                     is how it works.</a></h3>
                         </div>
                         <!-- Post Meta -->
@@ -96,12 +80,13 @@
                     <article class="post-sm">
                         <!-- Post Image -->
                         <div class="post-thumb">
-                            <a href="blog-single.html"><img class="w-100" src="images/blog/post-03.jpg"
-                                                            alt="Post-Image"></a>
+                            <a href="blog_single.blade.php"><img class="w-100" src="images/blog/post-03.jpg"
+                                                                 alt="Post-Image"></a>
                         </div>
                         <!-- Post Title -->
                         <div class="post-title">
-                            <h3><a href="blog-single.html">Design is not just what it looks like and feels like. Design
+                            <h3><a href="blog_single.blade.php">Design is not just what it looks like and feels like.
+                                    Design
                                     is how it works.</a></h3>
                         </div>
                         <!-- Post Meta -->
@@ -130,12 +115,13 @@
                     <article class="post-sm">
                         <!-- Post Image -->
                         <div class="post-thumb">
-                            <a href="blog-single.html"><img class="w-100" src="images/blog/post-01.jpg"
-                                                            alt="Post-Image"></a>
+                            <a href="blog_single.blade.php"><img class="w-100" src="images/blog/post-01.jpg"
+                                                                 alt="Post-Image"></a>
                         </div>
                         <!-- Post Title -->
                         <div class="post-title">
-                            <h3><a href="blog-single.html">Innovation distinguishes between a leader and a follower.</a>
+                            <h3><a href="blog_single.blade.php">Innovation distinguishes between a leader and a
+                                    follower.</a>
                             </h3>
                         </div>
                         <!-- Post Meta -->
@@ -164,12 +150,13 @@
                     <article class="post-sm">
                         <!-- Post Image -->
                         <div class="post-thumb">
-                            <a href="blog-single.html"><img class="w-100" src="images/blog/post-02.jpg"
-                                                            alt="Post-Image"></a>
+                            <a href="blog_single.blade.php"><img class="w-100" src="images/blog/post-02.jpg"
+                                                                 alt="Post-Image"></a>
                         </div>
                         <!-- Post Title -->
                         <div class="post-title">
-                            <h3><a href="blog-single.html">Design is not just what it looks like and feels like. Design
+                            <h3><a href="blog_single.blade.php">Design is not just what it looks like and feels like.
+                                    Design
                                     is how it works.</a></h3>
                         </div>
                         <!-- Post Meta -->
@@ -198,12 +185,13 @@
                     <article class="post-sm">
                         <!-- Post Image -->
                         <div class="post-thumb">
-                            <a href="blog-single.html"><img class="w-100" src="images/blog/post-03.jpg"
-                                                            alt="Post-Image"></a>
+                            <a href="blog_single.blade.php"><img class="w-100" src="images/blog/post-03.jpg"
+                                                                 alt="Post-Image"></a>
                         </div>
                         <!-- Post Title -->
                         <div class="post-title">
-                            <h3><a href="blog-single.html">Design is not just what it looks like and feels like. Design
+                            <h3><a href="blog_single.blade.php">Design is not just what it looks like and feels like.
+                                    Design
                                     is how it works.</a></h3>
                         </div>
                         <!-- Post Meta -->
@@ -254,12 +242,13 @@
                     <article class="post-sm">
                         <!-- Post Image -->
                         <div class="post-thumb">
-                            <a href="blog-single.html"><img class="w-100" src="images/blog/post-01.jpg"
-                                                            alt="Post-Image"></a>
+                            <a href="blog_single.blade.php"><img class="w-100" src="images/blog/post-01.jpg"
+                                                                 alt="Post-Image"></a>
                         </div>
                         <!-- Post Title -->
                         <div class="post-title">
-                            <h3><a href="blog-single.html">Innovation distinguishes between a leader and a follower.</a>
+                            <h3><a href="blog_single.blade.php">Innovation distinguishes between a leader and a
+                                    follower.</a>
                             </h3>
                         </div>
                         <!-- Post Meta -->
@@ -288,12 +277,13 @@
                     <article class="post-sm">
                         <!-- Post Image -->
                         <div class="post-thumb">
-                            <a href="blog-single.html"><img class="w-100" src="images/blog/post-02.jpg"
-                                                            alt="Post-Image"></a>
+                            <a href="blog_single.blade.php"><img class="w-100" src="images/blog/post-02.jpg"
+                                                                 alt="Post-Image"></a>
                         </div>
                         <!-- Post Title -->
                         <div class="post-title">
-                            <h3><a href="blog-single.html">Design is not just what it looks like and feels like. Design
+                            <h3><a href="blog_single.blade.php">Design is not just what it looks like and feels like.
+                                    Design
                                     is how it works.</a></h3>
                         </div>
                         <!-- Post Meta -->
@@ -322,12 +312,13 @@
                     <article class="post-sm">
                         <!-- Post Image -->
                         <div class="post-thumb">
-                            <a href="blog-single.html"><img class="w-100" src="images/blog/post-03.jpg"
-                                                            alt="Post-Image"></a>
+                            <a href="blog_single.blade.php"><img class="w-100" src="images/blog/post-03.jpg"
+                                                                 alt="Post-Image"></a>
                         </div>
                         <!-- Post Title -->
                         <div class="post-title">
-                            <h3><a href="blog-single.html">Design is not just what it looks like and feels like. Design
+                            <h3><a href="blog_single.blade.php">Design is not just what it looks like and feels like.
+                                    Design
                                     is how it works.</a></h3>
                         </div>
                         <!-- Post Meta -->
