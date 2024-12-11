@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
+use App\Http\Middleware\checkRole;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,14 +17,6 @@ Route::get('/blog', function () {
     return view('blog');
 })->name('blog');
 
-Route::get('/sign_in', function () {
-    return view('sign_in');
-})->name('sign_in');
-
-Route::get('/sign_up', function () {
-    return view('sign_up');
-})->name('sign_up');
-
 Route::get('/lesson/questions', function () {
     return view('test_page');
 })->name('questions');
@@ -29,3 +24,9 @@ Route::get('/lesson/questions', function () {
 Route::get('/blog/page', function () {
     return view('blog_single');
 })->name('blog_single');
+
+Route::post('/auth/register', [AuthController::class, 'registration'])->name('register');
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware(checkROle::class);
+
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

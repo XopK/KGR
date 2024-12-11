@@ -5,26 +5,9 @@
     // AOS
     // ----------------------------
     AOS.init({
-        once: true
+        once: true, disable: 'mobile',
     });
 
-
-    $(window).on('scroll', function () {
-        //.Scroll to top show/hide
-        var scrollToTop = $('.scroll-top-to'), scroll = $(window).scrollTop();
-        if (scroll >= 200) {
-            scrollToTop.fadeIn(200);
-        } else {
-            scrollToTop.fadeOut(100);
-        }
-    });
-    // scroll-to-top
-    $('.scroll-top-to').on('click', function () {
-        $('body,html').animate({
-            scrollTop: 0
-        }, 500);
-        return false;
-    });
 
     $(document).ready(function () {
 
@@ -124,12 +107,18 @@
         $('#authBtn').click(function () {
             $('#authForm').removeClass('d-none');
             $('#regForm').addClass('d-none');
+
+            $('#authBtn').removeClass('badge-primary').addClass('badge-success')
+            $('#regBtn').removeClass('badge-success').addClass('badge-primary')
         });
 
         // Переключение на регистрацию
         $('#regBtn').click(function () {
             $('#regForm').removeClass('d-none');
             $('#authForm').addClass('d-none');
+
+            $('#authBtn').removeClass('badge-success').addClass('badge-primary')
+            $('#regBtn').removeClass('badge-primary').addClass('badge-success')
         });
 
         // Переход на форму регистрации из авторизации
@@ -142,15 +131,6 @@
             $('#authBtn').click();
         });
 
-
-        // scroll
-        // $('.scrollTo').on('click', function (e) {
-        //   e.preventDefault();
-        //   var target = $(this).attr('href');
-        //   $('html, body').animate({
-        //     scrollTop: ($(target).offset().top)
-        //   }, 500);
-        // });
 
     });
 })(jQuery);

@@ -37,7 +37,8 @@
                 src="/images/logo2.png" alt="logo"><span
                 class="gradient-text">Практикум по КГР</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarNav" aria-expanded="false" style="margin-right: 20px"
+                aria-label="Toggle navigation">
             <span class="ti-menu"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -69,7 +70,7 @@
                 </li>
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ Auth::check() ? route('account') : route('sign_in') }}">Личный
+                        <a class="nav-link" href="/dfd">Личный
                             кабинет</a>
                     </li>
                 @endauth
@@ -84,9 +85,7 @@
     </div>
 </nav>
 
-
 {{ $slot }}
-
 
 <!--============================
 =            Footer            =
@@ -174,13 +173,8 @@
     </div>
 </footer>
 
-
-<!-- To Top -->
-<div class="scroll-top-to">
-    <i class="ti-angle-up"></i>
-</div>
-
 <x-auth/>
+<x-alerts/>
 
 <!-- JAVASCRIPTS -->
 <script src="/plugins/jquery/jquery.min.js"></script>
