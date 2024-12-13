@@ -56,3 +56,7 @@ Route::get('/courses', [CourseController::class, 'courses'])->name('courses');
 Route::get('/forum', [ForumController::class, 'forum'])->name('forum');
 
 Route::get('/forum/create-post', [ForumController::class, 'create_post'])->name('create_post')->middleware(authcheck::class);
+
+Route::post('/forum/create-post/store', [ForumController::class, 'add_post'])->name('add_post')->middleware(authcheck::class);
+
+Route::get('/forum/page', [ForumController::class, 'post'])->name('forum_page');

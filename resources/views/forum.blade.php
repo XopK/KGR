@@ -45,53 +45,39 @@
 
                 <!-- Список постов -->
                 <div class="row">
-                    <!-- Пример поста -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 p-3 rounded-lg d-flex flex-column">
-                            <a href="">
-                                <h5 class="card-title">Как изучать программирование?</h5>
-                            </a>
-                            <p class="card-text mb-3">Обсуждаем лучшие ресурсы для изучения программирования...</p>
-                            <div class="mt-auto">
-                                <span class="text-muted">Автор: Иван Иванов</span>
-                                <div class="text-muted">Рейтинг: 4.5</div> <!-- Рейтинг на новой строке -->
-                            </div>
-                            <!-- Кнопка для перехода к посту -->
-                            <a href="" class="btn btn-primary mt-3">Перейти к посту</a>
-                        </div>
-                    </div>
+                    @forelse($posts as $post)
+                        <!-- Пример поста -->
+                        <div class="col-md-12 mb-4">
+                            <div class="card h-100 p-3 rounded-lg d-flex flex-column">
+                                <a href="{{ route('forum_page') }}">
+                                    <h5 class="card-title">{{$post->title}}</h5>
+                                </a>
 
-                    <!-- Пример поста -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 p-3 rounded-lg d-flex flex-column">
-                            <a href="">
-                                <h5 class="card-title">Дизайн для начинающих</h5>
-                            </a>
-                            <p class="card-text mb-3">Как начать карьеру в дизайне и какие курсы выбрать...</p>
-                            <div class="mt-auto">
-                                <span class="text-muted">Автор: Мария Петрова</span>
-                                <div class="text-muted">Рейтинг: 4.2</div> <!-- Рейтинг на новой строке -->
-                            </div>
-                            <!-- Кнопка для перехода к посту -->
-                            <a href="" class="btn btn-primary mt-3">Перейти к посту</a>
-                        </div>
-                    </div>
+                                <p class="card-text mb-3">
+                                    {{ substr(preg_replace('/\s+/', ' ', strip_tags(preg_replace('/<a.*?>(.*?)<\/a>/', ' $1 ', $post->content))), 0, 300) }}
+                                    ...
+                                </p>
 
-                    <!-- Пример поста -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 p-3 rounded-lg d-flex flex-column">
-                            <a href="">
-                                <h5 class="card-title">Маркетинг в 2024 году</h5>
-                            </a>
-                            <p class="card-text mb-3">Актуальные тренды и инструменты маркетинга на текущий год...</p>
-                            <div class="mt-auto">
-                                <span class="text-muted">Автор: Алексей Смирнов</span>
-                                <div class="text-muted">Рейтинг: 4.7</div> <!-- Рейтинг на новой строке -->
+                                <div class="mt-auto">
+                                    <span
+                                        class="text-muted">Автор: {{$post->user->name}} {{$post->user->surname}}</span>
+                                    <br>
+                                    <span
+                                        class="text-muted">Дата создания: {{ $post->created_at->format('d.m.Y H:i') }}</span>
+                                </div>
+
+                                <!-- Кнопка для перехода к посту -->
+                                <a href="{{ route('forum_page') }}" class="btn btn-primary mt-3 custom-button">Перейти к
+                                    посту</a>
                             </div>
-                            <!-- Кнопка для перехода к посту -->
-                            <a href="" class="btn btn-primary mt-3">Перейти к посту</a>
                         </div>
-                    </div>
+                    @empty
+                        <div
+                            class="alert alert-warning my-5 p-4 col-10 col-sm-6 col-md-6 mx-auto d-flex align-items-center justify-content-center"
+                            role="alert">
+                            Посты отсутствуют!
+                        </div>
+                    @endforelse
                     <!-- Повторить для других постов -->
                 </div>
 

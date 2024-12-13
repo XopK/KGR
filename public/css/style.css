@@ -2561,6 +2561,20 @@ h3.question {
     padding: 10px;
 }
 
+#editor {
+    font-family: "Unbounded", serif;
+}
+
+.custom-button {
+    width: 25%;
+}
+
+@media (max-width: 768px) {
+    .custom-button {
+        width: 100%;
+    }
+}
+
 
 
 
