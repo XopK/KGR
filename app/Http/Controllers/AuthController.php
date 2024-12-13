@@ -39,6 +39,23 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->back();
+
+        return redirect('/')->with('success', 'Вы вышли из аккаунта.');
+    }
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+        ]);
+
+        $remember = $request->has('remember');
+
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember)) {
+            return redirect(route('my_profile'))->with('success', 'Вы успешно авторизовались!');
+        } else {
+            return redirect()->back()->with('error', 'Неверные данные для входа.');
+        }
     }
 }

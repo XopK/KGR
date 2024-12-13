@@ -2,7 +2,11 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ForumController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\checkRole;
+use App\Http\Middleware\authcheck;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,6 +31,28 @@ Route::get('/blog/page', function () {
 
 Route::post('/auth/register', [AuthController::class, 'registration'])->name('register');
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware(checkROle::class);
+Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware(checkRole::class);
 
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware(authcheck::class);
+
+Route::post('/auth/login', [AuthController::class, 'login'])->name('login');
+
+Route::get('/profile/settings', [UserController::class, 'my_profile'])->name('my_profile')->middleware(authcheck::class);;
+
+Route::get('/profile/portfolio', [UserController::class, 'my_portfolio'])->name('my_portfolio')->middleware(authcheck::class);;
+
+Route::get('profile/liked', [UserController::class, 'my_liked'])->name('my_liked')->middleware(authcheck::class);
+
+Route::post('/profile/settings/update', [UserController::class, 'update_profile'])->name('update_profile')->middleware(authcheck::class);
+
+Route::post('/profile/email_verified', [UserController::class, 'send_code'])->name('send_code')->middleware(authcheck::class);
+
+Route::get('/verify-email/{token}', [UserController::class, 'verify_email'])->name('verify_email');
+
+Route::post('/password/reset', [UserController::class, 'reset_password'])->name('reset_password')->middleware(authcheck::class);
+
+Route::get('/courses', [CourseController::class, 'courses'])->name('courses');
+
+Route::get('/forum', [ForumController::class, 'forum'])->name('forum');
+
+Route::get('/forum/create-post', [ForumController::class, 'create_post'])->name('create_post')->middleware(authcheck::class);

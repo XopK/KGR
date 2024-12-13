@@ -11,11 +11,21 @@
                 <!-- Форма авторизации -->
                 <div id="authForm" class="form-container">
                     <h3 class="mb-4">Добро пожаловать! <br> Войдите в аккаунт</h3>
-                    <form action="#" class="mb-3">
+                    <form action="{{ route('login') }}" method="post" class="mb-3">
+                        @csrf
                         <!-- Username -->
-                        <input class="form-control main" type="email" placeholder="Почта" required>
+                        <input class="form-control main" type="email" value="{{old('email')}}" name="email"
+                               placeholder="Почта" required>
                         <!-- Password -->
-                        <input class="form-control main" type="password" placeholder="Пароль" required>
+                        <input class="form-control main" type="password" name="password" placeholder="Пароль" required>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" name="remember" type="checkbox" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">
+                                Запомнить меня
+                            </label>
+                        </div>
+
                         <!-- Submit Button -->
                         <button style="width: 100%;" class="btn btn-main-sm">Войти</button>
                     </form>
@@ -32,11 +42,11 @@
                     <form action="{{ route('register') }}" class="mb-3" method="post">
                         @csrf
                         <!-- Username -->
-                        <input class="form-control main" type="text" name="name" placeholder="Имя" required>
+                        <input class="form-control main" type="text" value="{{old('name')}}" name="name" placeholder="Имя" required>
 
-                        <input class="form-control main" type="text" name="surname" placeholder="Фамилия" required>
+                        <input class="form-control main" type="text" value="{{old('surname')}}" name="surname" placeholder="Фамилия" required>
                         <!-- Email -->
-                        <input class="form-control main" type="email" name="email" placeholder="Почта" required>
+                        <input class="form-control main" type="email" value="{{old('email')}}" name="email" placeholder="Почта" required>
                         <!-- Password -->
                         <input class="form-control main" type="password" name="password" placeholder="Пароль" required>
 

@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="/plugins/slick/slick-theme.css">
     <link rel="stylesheet" href="/plugins/fancybox/jquery.fancybox.min.css">
     <link rel="stylesheet" href="/plugins/aos/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
 
     <!-- CUSTOM CSS -->
     <link href="/css/style.css" rel="stylesheet">
@@ -48,29 +50,30 @@
                     <a class="nav-link" href="{{ route('index') }}">Главная</a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Практикум
+                <li class="nav-item dropdown {{ Request::is('courses*') ? 'active' : '' }}">
+                    <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">Практикум
                         <span><i class="ti-angle-down"></i></span>
                     </a>
                     <!-- Dropdown list -->
                     <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('courses') }}">Все уроки</a></li>
                         <li><a class="dropdown-item" href="index.html">Основы 3D-моделирования и анимации</a></li>
                         <li><a class="dropdown-item" href="homepage-2.html">Графика и анимация для веб-дизайна</a></li>
-                        <li><a class="dropdown-item active3" href="homepage-3.html">Цифровая живопись и концепт-арт</a>
+                        <li><a class="dropdown-item" href="homepage-3.html">Цифровая живопись и концепт-арт</a>
                         </li>
                     </ul>
                 </li>
 
-                <li class="nav-item ">
-                    <a class="nav-link" href="about.html">Форум</a>
+                <li class="nav-item {{ Request::routeIs('forum') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('forum') }}">Форум</a>
                 </li>
 
                 <li class="nav-item {{ Request::routeIs('blog') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('blog') }}">Статьи</a>
                 </li>
                 @auth
-                    <li class="nav-item">
-                        <a class="nav-link" href="/dfd">Личный
+                    <li class="nav-item {{ Request::is('profile*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('my_profile') }}">Личный
                             кабинет</a>
                     </li>
                 @endauth
@@ -103,13 +106,13 @@
                         <!-- Social Site Icons -->
                         <ul class="social-icon list-inline">
                             <li class="list-inline-item">
-                                <a href="https://www.facebook.com/themefisher"><i class="ti-facebook"></i></a>
+                                <a href="https://vk.com/"><i class="fab fa-vk"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://twitter.com/themefisher"><i class="ti-twitter"></i></a>
+                                <a href="https://web.telegram.org/"><i class="fab fa-telegram"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://www.instagram.com/themefisher/"><i class="ti-instagram"></i></a>
+                                <a href="https://rutube.ru/"><i class="fa fa-video"></i></a>
                             </li>
                         </ul>
                     </div>

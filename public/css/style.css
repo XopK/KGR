@@ -2525,6 +2525,42 @@ h3.question {
     z-index: 1055;
 }
 
+.custom-btn {
+    width: 100%;
+    background-color: rgba(0, 0, 0, .03);
+    color: #495057; /* Темный цвет текста */
+    padding: 12px 20px; /* Отступы внутри кнопки */
+    font-size: 14px; /* Размер шрифта */
+    font-weight: 600; /* Жирный шрифт */
+    margin-bottom: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+
+.custom-btn.active {
+    background-color: #007bff; /* Синий фон для активной кнопки */
+    color: white; /* Белый текст */
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3); /* Легкая тень для выделения */
+}
+
+.custom-btn:hover {
+    background-color: #007bff; /* Темный синий фон при наведении */
+    color: white;
+    text-decoration: none;
+}
+
+.logout:hover {
+    background-color: #f63232; /* Темный синий фон при наведении */
+    color: white;
+    text-decoration: none;
+}
+
+.btn {
+    font-size: 15px;
+    padding: 10px;
+}
+
 
 
 

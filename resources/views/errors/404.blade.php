@@ -45,9 +45,6 @@
 
 
 <!-- To Top -->
-<div class="scroll-top-to">
-    <i class="ti-angle-up"></i>
-</div>
 
 <!-- JAVASCRIPTS -->
 <script src="/plugins/jquery/jquery.min.js"></script>
