@@ -2575,6 +2575,61 @@ h3.question {
     }
 }
 
+.custom-img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .custom-img {
+        max-width: 100%;
+    }
+}
+
+#likeButton:active {
+    background-color: inherit;
+    box-shadow: none;
+    color: #dc3545;
+}
+
+#likeButton:focus {
+    box-shadow: none;
+}
+
+.content-placeholder-wrapper {
+    position: relative;
+}
+
+.placeholder {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.auto-expand-input:empty + .placeholder {
+    visibility: visible;
+}
+
+.new-comment-hidden {
+    display: none;
+}
+
+.truncate-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 4; /* Количество строк, которые нужно отобразить */
+    max-height: 400px; /* Для предотвращения переполнения */
+}
+
+
+
+
 
 
 

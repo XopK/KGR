@@ -2,18 +2,18 @@
 
 namespace App\View\Components;
 
-use App\Models\CategoryCourse;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class layout extends Component
+class admin extends Component
 {
-    public $categories;
-
+    /**
+     * Create a new component instance.
+     */
     public function __construct()
     {
-        $this->categories = CategoryCourse::orderBy('created_at', 'desc')->limit(5)->get();
+        //
     }
 
     /**
@@ -21,6 +21,6 @@ class layout extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.layout', ['categories_courses_header' => $this->categories]);
+        return view('components.admin');
     }
 }

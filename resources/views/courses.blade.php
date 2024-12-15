@@ -86,98 +86,26 @@
                     <div class="col-md-9">
                         <h2>Все уроки</h2>
                         <div class="row">
-                            <!-- Пример карточки курса -->
-                            <div class="col-md-6 mb-4">
-                                <div class="card h-100 p-3 rounded-lg">
-                                    <a href="{{ route('lessons') }}">
-                                        <img src="https://imgholder.ru/300x200" alt="Курс по программированию"
-                                             class="card-img-top img-fluid">
-                                    </a>
-
-                                    <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title">Курс по программированию</h5>
-                                        <p class="card-text mb-3"
-                                           style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;">
-                                            Научитесь программировать с нуля. Начните с основ и получите все необходимые
-                                            навыки для работы.
-                                        </p>
-                                        <a href="{{ route('lessons') }}" class="btn btn-outline-primary mt-auto">Подробнее</a>
+                            @forelse($courses as $course)
+                                <div class="col-md-6 mb-4">
+                                    <div class="card h-100 p-3 rounded-lg">
+                                        <a href="{{ route('lessons') }}">
+                                            <img src="/storage/public/coursesImage/{{ $course->image }}"
+                                                 alt="{{ $course->image }}"
+                                                 class="card-img-top img-fluid">
+                                        </a>
+                                        <div class="card-body d-flex flex-column">
+                                            <h5 class="card-title">{{ $course->title }}</h5>
+                                            <p class="card-text mb-3"
+                                               style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;">
+                                                {{ $course->description }}
+                                            </p>
+                                            <a href="{{ route('lessons') }}" class="btn btn-outline-primary mt-auto">Подробнее</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- Пример карточки курса -->
-                            <div class="col-md-6 mb-4">
-                                <div class="card h-100 p-3 rounded-lg">
-                                    <a href="{{ route('lessons') }}">
-                                        <img src="https://imgholder.ru/300x200" alt="Курс по дизайну"
-                                             class="card-img-top img-fluid">
-                                    </a>
-                                    <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title">Курс по дизайну</h5>
-                                        <p class="card-text mb-3"
-                                           style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;">
-                                            Освойте основы дизайна и научитесь создавать визуальные проекты для бизнеса
-                                            и стартапов.
-                                        </p>
-                                        <a href="{{ route('lessons') }}" class="btn btn-outline-primary mt-auto">Подробнее</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 mb-4">
-                                <div class="card h-100 p-3 rounded-lg">
-                                    <a href="{{ route('lessons') }}">
-                                        <img src="https://imgholder.ru/300x200" alt="Курс по дизайну"
-                                             class="card-img-top img-fluid">
-                                    </a>
-                                    <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title">Курс по дизайну</h5>
-                                        <p class="card-text mb-3"
-                                           style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;">
-                                            Освойте основы дизайна и научитесь создавать визуальные проекты для бизнеса
-                                            и стартапов.
-                                        </p>
-                                        <a href="{{ route('lessons') }}" class="btn btn-outline-primary mt-auto">Подробнее</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 mb-4">
-                                <div class="card h-100 p-3 rounded-lg">
-                                    <a href="{{ route('lessons') }}">
-                                        <img src="https://imgholder.ru/300x200" alt="Курс по дизайну"
-                                             class="card-img-top img-fluid">
-                                    </a>
-                                    <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title">Курс по дизайну</h5>
-                                        <p class="card-text mb-3"
-                                           style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;">
-                                            Освойте основы дизайна и научитесь создавать визуальные проекты для бизнеса
-                                            и стартапов.
-                                        </p>
-                                        <a href="{{ route('lessons') }}" class="btn btn-outline-primary mt-auto">Подробнее</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 mb-4">
-                                <div class="card h-100 p-3 rounded-lg">
-                                    <a href="{{ route('lessons') }}">
-                                        <img src="https://imgholder.ru/300x200" alt="Курс по дизайну"
-                                             class="card-img-top img-fluid">
-                                    </a>
-                                    <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title">Курс по дизайну</h5>
-                                        <p class="card-text mb-3"
-                                           style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;">
-                                            Освойте основы дизайна и научитесь создавать визуальные проекты для бизнеса
-                                            и стартапов.
-                                        </p>
-                                        <a href="{{ route('lessons') }}" class="btn btn-outline-primary mt-auto">Подробнее</a>
-                                    </div>
-                                </div>
-                            </div>
+                            @empty
+                            @endforelse
                         </div>
                     </div>
                     <div class="col-12 mt-4">

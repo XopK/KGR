@@ -154,114 +154,34 @@
                 <div class="col-lg-12">
                     <!-- Testimonial Slider -->
                     <div class="testimonial-slider owl-carousel owl-theme">
+                        @forelse($courses as $course)
+                            <div class="item">
+                                <div class="block shadow">
+                                    <!-- Image -->
+                                    <a href="{{ route('lessons') }}">
+                                        <img src="/storage/public/coursesImage/{{ $course->image }}"
+                                             class="card-img-top"
+                                             alt="{{ $course->image }}">
+                                    </a>
 
-                        <!-- Testimonial 01 -->
-                        <div class="item">
-                            <div class="block shadow">
-                                <!-- Image -->
-                                <a href="{{ route('lessons') }}">
-                                    <img src="https://imgholder.ru/300x200" class="card-img-top" alt="Product Image">
-                                </a>
+                                    <!-- Product Title -->
+                                    <h5 class="card-title h3 mt-3">{{ $course->title }}</h5>
 
-                                <!-- Product Title -->
-                                <h5 class="card-title h3 mt-3">Название курса</h5>
-
-                                <!-- Category Badge Below Title -->
-                                <span class="badge badge-primary mb-3">Категория</span>
+                                    <!-- Category Badge Below Title -->
+                                    <span class="badge badge-primary mb-3">{{ $course->category->name_category }}</span>
 
 
-                                <!-- Description -->
-                                <p class="mb-3">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deserunt eligendi
-                                    eveniet libero molestiae sequi sunt veniam? Aspernatur, assumenda atque distinctio
-                                    eligendi esse facere necessitatibus nobis, odio quia rerum veniam!
-                                </p>
+                                    <!-- Description -->
+                                    <p class="mb-3 truncate-text">
+                                        {{ $course->description }}
+                                    </p>
 
-                                <!-- Button to Product -->
-                                <a href="{{ route('lessons') }}" class="btn btn-primary">Перейти к курсу</a>
+                                    <!-- Button to Product -->
+                                    <a href="{{ route('lessons') }}" class="btn btn-primary">Перейти к курсу</a>
+                                </div>
                             </div>
-                        </div>
-
-                        <!-- Testimonial 01 -->
-                        <div class="item">
-                            <div class="block shadow">
-                                <!-- Image -->
-                                <a href="{{ route('lessons') }}">
-                                    <img src="https://imgholder.ru/300x200" class="card-img-top" alt="Product Image">
-                                </a>
-
-                                <!-- Product Title -->
-                                <h5 class="card-title h3 mt-3">Название курса</h5>
-
-                                <!-- Category Badge Below Title -->
-                                <span class="badge badge-primary mb-3">Категория</span>
-
-
-                                <!-- Description -->
-                                <p class="mb-3">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deserunt eligendi
-                                    eveniet libero molestiae sequi sunt veniam? Aspernatur, assumenda atque distinctio
-                                    eligendi esse facere necessitatibus nobis, odio quia rerum veniam!
-                                </p>
-
-                                <!-- Button to Product -->
-                                <a href="{{ route('lessons') }}" class="btn btn-primary">Перейти к курсу</a>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 01 -->
-                        <div class="item">
-                            <div class="block shadow">
-                                <!-- Image -->
-                                <a href="{{ route('lessons') }}">
-                                    <img src="https://imgholder.ru/300x200" class="card-img-top" alt="Product Image">
-                                </a>
-
-                                <!-- Product Title -->
-                                <h5 class="card-title h3 mt-3">Название курса</h5>
-
-                                <!-- Category Badge Below Title -->
-                                <span class="badge badge-primary mb-3">Категория</span>
-
-
-                                <!-- Description -->
-                                <p class="mb-3">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deserunt eligendi
-                                    eveniet libero molestiae sequi sunt veniam? Aspernatur, assumenda atque distinctio
-                                    eligendi esse facere necessitatibus nobis, odio quia rerum veniam!
-                                </p>
-
-                                <!-- Button to Product -->
-                                <a href="{{ route('lessons') }}" class="btn btn-primary">Перейти к курсу</a>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 01 -->
-                        <div class="item">
-                            <div class="block shadow">
-                                <!-- Image -->
-                                <a href="{{ route('lessons') }}">
-                                    <img src="https://imgholder.ru/300x200" class="card-img-top" alt="Product Image">
-                                </a>
-
-                                <!-- Product Title -->
-                                <h5 class="card-title h3 mt-3">Название курса</h5>
-
-                                <!-- Category Badge Below Title -->
-                                <span class="badge badge-primary mb-3">Категория</span>
-
-
-                                <!-- Description -->
-                                <p class="mb-3">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deserunt eligendi
-                                    eveniet libero molestiae sequi sunt veniam? Aspernatur, assumenda atque distinctio
-                                    eligendi esse facere necessitatibus nobis, odio quia rerum veniam!
-                                </p>
-
-                                <!-- Button to Product -->
-                                <a href="{{ route('lessons') }}" class="btn btn-primary">Перейти к курсу</a>
-                            </div>
-                        </div>
+                        @empty
+                        @endforelse
 
                     </div>
                 </div>

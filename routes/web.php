@@ -7,10 +7,12 @@ use App\Http\Controllers\ForumController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\checkRole;
 use App\Http\Middleware\authcheck;
+use App\Models\Course;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('index');
+    $courses = Course::orderBy('created_at', 'desc')->limit(6)->get();
+    return view('index', ['courses' => $courses]);
 })->name('index');
 
 Route::get('/lesson', function () {
@@ -59,4 +61,30 @@ Route::get('/forum/create-post', [ForumController::class, 'create_post'])->name(
 
 Route::post('/forum/create-post/store', [ForumController::class, 'add_post'])->name('add_post')->middleware(authcheck::class);
 
-Route::get('/forum/page', [ForumController::class, 'post'])->name('forum_page');
+Route::get('/forum/{post}', [ForumController::class, 'post'])->name('forum_page');
+
+Route::post('/forum/{post}/like', [ForumController::class, 'like_post'])->name('like_post')->middleware(authcheck::class);
+
+Route::post('/forum/add_comment', [ForumController::class, 'comment_post'])->name('comment_post')->middleware(authcheck::class);
+
+Route::get('/admin/courses', [AdminController::class, 'courses'])->name('admin.courses')->middleware(checkRole::class);
+
+Route::get('/admin/blogs', [AdminController::class, 'blogs'])->name('admin.blogs')->middleware(checkRole::class);
+
+Route::get('/admin/tests', [AdminController::class, 'tests'])->name('admin.tests')->middleware(checkRole::class);
+
+Route::get('/admin/users', [AdminController::class, 'users'])->name('admin.users')->middleware(checkRole::class);
+
+Route::get('/admin/userWorks', [AdminController::class, 'userWorks'])->name('admin.userWorks')->middleware(checkRole::class);
+
+Route::get('/admin/courses/create', [AdminController::class, 'create_courses'])->name('admin.courses.create')->middleware(checkRole::class);
+
+Route::post('/admin/courses/create/store', [AdminController::class, 'store_courses'])->name('admin.courses.store')->middleware(checkRole::class);
+
+Route::get('/admin/categories', [AdminController::class, 'categories'])->name('admin.categories')->middleware(checkRole::class);
+
+Route::post('/admin/categories/store', [AdminController::class, 'store_categories'])->name('admin.categories.store')->middleware(checkRole::class);
+
+Route::get('/admin/tests/create', [AdminController::class, 'create_tests'])->name('admin.tests.create')->middleware(checkRole::class);
+
+Route::post('/admin/tests/create/store', [AdminController::class, 'store_tests'])->name('admin.tests.store')->middleware(checkRole::class);

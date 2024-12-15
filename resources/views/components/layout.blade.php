@@ -57,33 +57,35 @@
                     <!-- Dropdown list -->
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('courses') }}">Все уроки</a></li>
-                        <li><a class="dropdown-item" href="index.html">Основы 3D-моделирования и анимации</a></li>
-                        <li><a class="dropdown-item" href="homepage-2.html">Графика и анимация для веб-дизайна</a></li>
-                        <li><a class="dropdown-item" href="homepage-3.html">Цифровая живопись и концепт-арт</a>
-                        </li>
-                    </ul>
+                        @forelse($categories_courses_header as $header)
+                            <li><a class="dropdown-item" href="{{ route('courses') }}">{{ $header->name_category }}</a>
+                            </li>
+                    @empty
+                    @endforelse
                 </li>
-
-                <li class="nav-item {{ Request::routeIs('forum') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('forum') }}">Форум</a>
-                </li>
-
-                <li class="nav-item {{ Request::routeIs('blog') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('blog') }}">Статьи</a>
-                </li>
-                @auth
-                    <li class="nav-item {{ Request::is('profile*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('my_profile') }}">Личный
-                            кабинет</a>
-                    </li>
-                @endauth
-                @guest
-                    <li class="nav-item">
-                        <a class="nav-link" style="cursor: pointer;" data-toggle="modal" data-target="#authModal">Личный
-                            кабинет</a>
-                    </li>
-                @endguest
             </ul>
+            </li>
+
+            <li class="nav-item {{ Request::is('forum*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('forum') }}">Форум</a>
+            </li>
+
+            <li class="nav-item {{ Request::routeIs('blog') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('blog') }}">Статьи</a>
+            </li>
+            @auth
+                <li class="nav-item {{ Request::is('profile*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('my_profile') }}">Личный
+                        кабинет</a>
+                </li>
+            @endauth
+            @guest
+                <li class="nav-item">
+                    <a class="nav-link" style="cursor: pointer;" data-toggle="modal" data-target="#authModal">Личный
+                        кабинет</a>
+                </li>
+                @endguest
+                </ul>
         </div>
     </div>
 </nav>
@@ -106,15 +108,17 @@
                         <!-- Social Site Icons -->
                         <ul class="social-icon list-inline">
                             <li class="list-inline-item">
-                                <a href="https://vk.com/"><i class="fab fa-vk"></i></a>
+                                <a href="https://vk.com/"><i class="fab fa-vk"></i></a> <!-- Иконка VK -->
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://web.telegram.org/"><i class="fab fa-telegram"></i></a>
+                                <a href="https://web.telegram.org/"><i class="fab fa-telegram-plane"></i></a>
+                                <!-- Иконка Telegram -->
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://rutube.ru/"><i class="fa fa-video"></i></a>
+                                <a href="https://rutube.ru/"><i class="fas fa-video"></i></a> <!-- Иконка видео -->
                             </li>
                         </ul>
+
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
