@@ -36,4 +36,9 @@ class Course extends Model
         return $this->hasMany(UserWork::class, 'course_id');
     }
 
+    public function watched()
+    {
+        return $this->increment('count_views');
+    }
+
 }

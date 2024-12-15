@@ -60,36 +60,38 @@
     <!--===============================
 =            Fun Facts            =
 ===============================-->
-    <section class="company-fun-facts section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h3>Шаги для выполнения задания:</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="instruction-text mt-4">
-                        <ol style="font-size: 18px; line-height: 1.6;">
-                            @foreach($course->instructions as $instruction)
-                                <li class="list-lesson">
-                                    {{$instruction->instruction}}
-                                </li>
-                                <a href="/storage/public/InstructionImage/{{$instruction->image_instruction}}"
-                                   data-fancybox>
-                                    <img src="/storage/public/InstructionImage/{{$instruction->image_instruction}}"
-                                         alt="{{$instruction->image_instruction}}"
-                                         class="image-lesson-practic img-fluid mb-3">
-                                </a>
-                            @endforeach
-
-                        </ol>
+    @if($course->instructions->isNotEmpty())
+        <section class="company-fun-facts section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3>Шаги для выполнения задания:</h3>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="instruction-text mt-4">
+                            <ol style="font-size: 18px; line-height: 1.6;">
+                                @foreach($course->instructions as $instruction)
+                                    <li class="list-lesson">
+                                        {{$instruction->instruction}}
+                                    </li>
+                                    <a href="/storage/public/InstructionImage/{{$instruction->image_instruction}}"
+                                       data-fancybox>
+                                        <img src="/storage/public/InstructionImage/{{$instruction->image_instruction}}"
+                                             alt="{{$instruction->image_instruction}}"
+                                             class="image-lesson-practic img-fluid mb-3">
+                                    </a>
+                                @endforeach
 
+                            </ol>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
     <section class="job-section section pt-0">
         <div class="container">
@@ -165,7 +167,7 @@
         </section>
     @endif
 
-    @if($course->works)
+    @if($course->works->isNotEmpty())
         <!--=============================
     =            Gallery            =
     ==============================-->
@@ -173,7 +175,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2>Галерея работ</h2>
+                        <h2 class="text-center">Галерея работ</h2>
                         <div class="gallery-slider owl-carousel owl-theme mt-3">
                             @foreach($course->works as $work)
                                 <div class="item">
@@ -237,6 +239,4 @@
             }
         }
     });
-
-
 </script>

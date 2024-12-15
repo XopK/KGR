@@ -31,10 +31,15 @@
                                         <td>{{$post->name_category}}</td>
                                         <td>
                                             <a href="#" class="btn btn-sm btn-warning">Редактировать</a>
-                                            <button class="btn btn-sm btn-danger"
-                                                    onclick="return confirm('Вы уверены?')">
-                                                Удалить
-                                            </button>
+                                            <form
+                                                action="{{ route('delete_category') }}"
+                                                method="POST" style="display: inline;">
+                                                @csrf
+                                                <input type="hidden" name="category_id" value="{{$post->id}}">
+                                                <input type="hidden" name="type" value="post">
+                                                <button type="submit" class="btn btn-sm btn-danger">Удалить</button>
+                                            </form>
+
                                         </td>
                                     </tr>
                                 @empty
@@ -67,10 +72,14 @@
                                         <td>{{$course->name_category}}</td>
                                         <td>
                                             <a href="#" class="btn btn-sm btn-warning">Редактировать</a>
-                                            <button class="btn btn-sm btn-danger"
-                                                    onclick="return confirm('Вы уверены?')">
-                                                Удалить
-                                            </button>
+                                            <form
+                                                action="{{ route('delete_category') }}"
+                                                method="POST" style="display: inline;">
+                                                @csrf
+                                                <input type="hidden" name="category_id" value="{{$course->id}}">
+                                                <input type="hidden" name="type" value="course">
+                                                <button type="submit" class="btn btn-sm btn-danger">Удалить</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @empty

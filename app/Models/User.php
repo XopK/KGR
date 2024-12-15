@@ -56,7 +56,7 @@ class User extends Authenticatable
 
     public function posts()
     {
-        return $this->hasMany(Post::class, 'user_id');
+        return $this->hasMany(Post::class, 'user_id')->orderBy('created_at', 'desc');
     }
 
     public function comments()
@@ -67,5 +67,15 @@ class User extends Authenticatable
     public function works()
     {
         return $this->hasMany(UserWork::class, 'user_id');
+    }
+
+    public function complete_tests()
+    {
+        return $this->hasMany(CompleteTest::class, 'user_id');
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(LikePost::class, 'user_id');
     }
 }

@@ -26,4 +26,9 @@ class Test extends Model
     {
         return $this->belongsTo(Course::class, 'course_id');
     }
+
+    public function complete()
+    {
+        return $this->hasMany(CompleteTest::class, 'test_id');
+    }
 }

@@ -38,16 +38,16 @@
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
                             <img
-                                    src="{{Auth::user()->profile_img == 'default.png' ? '/images/icons/defaultProfile.png' : '/storage/public/userPhotos/'.Auth::user()->profile_img}}"
-                                    alt="user-img" width="36"
-                                    class="img-circle"><span>{{ Auth::user()->name }} {{ Auth::user()->surname }}</span></span>
+                                src="{{Auth::user()->profile_img == 'default.png' ? '/images/icons/defaultProfile.png' : '/storage/public/userPhotos/'.Auth::user()->profile_img}}"
+                                alt="user-img" width="36"
+                                class="img-circle"><span>{{ Auth::user()->name }} {{ Auth::user()->surname }}</span></span>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
                             <li>
                                 <div class="user-box">
                                     <div class="u-img"><img
-                                                src="{{Auth::user()->profile_img == 'default.png' ? '/images/icons/defaultProfile.png' : '/storage/public/userPhotos/'.Auth::user()->profile_img}}"
-                                                alt="user"></div>
+                                            src="{{Auth::user()->profile_img == 'default.png' ? '/images/icons/defaultProfile.png' : '/storage/public/userPhotos/'.Auth::user()->profile_img}}"
+                                            alt="user"></div>
                                     <div class="u-text">
                                         <h4>{{ Auth::user()->name }} {{ Auth::user()->surname }}</h4>
                                         <p class="text-muted">{{ Auth::user()->email }}</p></div>
@@ -73,7 +73,7 @@
             <div class="user">
                 <div class="photo">
                     <img
-                            src="{{Auth::user()->profile_img == 'default.png' ? '/images/icons/defaultProfile.png' : '/storage/public/userPhotos/'.Auth::user()->profile_img}}">
+                        src="{{Auth::user()->profile_img == 'default.png' ? '/images/icons/defaultProfile.png' : '/storage/public/userPhotos/'.Auth::user()->profile_img}}">
                 </div>
                 <div class="info">
                     <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">

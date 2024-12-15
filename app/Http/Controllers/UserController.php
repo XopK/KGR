@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Mail\VerifyEmail;
+use App\Models\CategoryPost;
 use App\Models\User;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -138,5 +140,76 @@ class UserController extends Controller
 
         return redirect()->back()->with('success', 'Пароль успешно изменен!');
     }
+
+    public function complete_tests()
+    {
+        return view('complete_test');
+    }
+
+    public function my_posts()
+    {
+        return view('my_posts');
+    }
+
+    public function edit_post(Post $post)
+    {
+        $categories = CategoryPost::orderBy('created_at', 'desc')->get();
+
+        return view('edit_post', ['post' => $post, 'categories' => $categories]);
+    }
+
+    public function update_post(Request $request, Post $post)
+    {
+        $request->validate([
+            'title' => 'required',
+            'category' => 'required',
+            'content_post' => 'required',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        try {
+            $photoHash = $post->photo;
+
+            if ($request->hasFile('photo')) {
+
+                if ($post->photo) {
+                    Storage::delete('public/photoPosts/' . $post->photo);
+                }
+
+                $photoHash = $request->file('photo')->hashName();
+                $request->file('photo')->storeAs('public/photoPosts', $photoHash);
+            }
+
+            $post->update([
+                'title' => $request->title,
+                'category_id' => $request->category,
+                'content' => $request->content_post,
+                'photo' => $photoHash,
+            ]);
+
+            return redirect()->route('my_posts')->with('success', 'Пост успешно изменен!');
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', 'Произошла ошибка при обновалении. Попробуйте еще раз.');
+        }
+
+    }
+
+    public function delete_post(Post $post)
+    {
+        try {
+            if (!empty($post->photo)) {
+                Storage::delete('public/photoPosts/' . $post->photo);
+            }
+
+            $post->delete();
+
+            return redirect()->back()->with('success', 'Пост успешно удалён!');
+        } catch (\Exception $e) {
+            \Log::error('Ошибка удаления поста: ' . $e->getMessage());
+
+            return redirect()->back()->with('error', 'Ошибка при удалении поста. Попробуйте еще раз.');
+        }
+    }
+
 
 }

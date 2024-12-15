@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CompleteTest;
 use App\Models\Course;
 use App\Models\Test;
 use App\Models\UserWork;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use function Pest\Laravel\json;
 
 class CourseController extends Controller
 {
@@ -20,6 +22,14 @@ class CourseController extends Controller
 
     public function lessons_page(Course $course)
     {
+
+        $sessionKey = 'viewed_course_' . $course->id;
+
+        if (!session()->has($sessionKey)) {
+            $course->watched();
+            session()->put($sessionKey, true);
+        }
+
         preg_match('/video\/([a-f0-9]{32})\//', $course->video_url, $matches);
 
         if (isset($matches[1])) {
@@ -50,10 +60,18 @@ class CourseController extends Controller
 
     public function question_page(Test $test)
     {
+        $user = Auth::user();
+        $checkComplete = CompleteTest::where('user_id', $user->id)->where('test_id', $test->id)->exists();
+
+        if ($checkComplete) {
+            abort(409);
+        }
+
         $questions = $test->questions()->with('answers')->get();
 
         $formattedQuestions = $questions->map(function ($question) {
             return [
+                'test_id' => $question->test_id,
                 'question' => $question->question_text,
                 'answers' => $question->answers->pluck('answer')->toArray(),
                 'correct' => $question->answers->firstWhere('is_correct', 1)->answer,
@@ -88,5 +106,36 @@ class CourseController extends Controller
             return redirect()->back()->with('error', 'Ошибка при отправке файла. Поробуйте еще раз.');
         }
 
+    }
+
+    public function complete_test_send(Request $request)
+    {
+
+        $request->validate([
+            'correctAnswers' => 'required',
+            'incorrectAnswers' => 'required',
+            'test_id' => 'required',
+        ]);
+
+        $user = Auth::user();
+
+        $complete = CompleteTest::create([
+            'test_id' => $request->test_id,
+            'user_id' => $user->id,
+            'correct' => $request->correctAnswers,
+            'incorrect' => $request->incorrectAnswers,
+        ]);
+
+        if ($complete) {
+            return response()->json([
+                'status' => true,
+                'message' => 'Записано!',
+            ]);
+        } else {
+            return response()->json([
+                'status' => false,
+                'message' => 'Ошибка!'
+            ]);
+        }
     }
 }

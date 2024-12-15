@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    let instructionIndex = 1; // Индекс для инструкций
 
     // Кнопка добавления нового шага
     $('#add-instruction').on('click', function () {

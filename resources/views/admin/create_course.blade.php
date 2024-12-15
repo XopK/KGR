@@ -126,5 +126,7 @@
     </template>
 
 </x-admin>
-
+<script>
+    let instructionIndex = 1; // Индекс для инструкций
+</script>
 <script src="/assets/js/courses.js"></script>

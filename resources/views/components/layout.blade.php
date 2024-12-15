@@ -50,7 +50,7 @@
                     <a class="nav-link" href="{{ route('index') }}">Главная</a>
                 </li>
 
-                <li class="nav-item dropdown {{ Request::is('courses*') ? 'active' : '' }}">
+                <li class="nav-item dropdown {{ Request::is('courses*') || Request::is('lesson*') ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">Практикум
                         <span><i class="ti-angle-down"></i></span>
                     </a>

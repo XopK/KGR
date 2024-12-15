@@ -86,3 +86,27 @@ Route::post('/admin/categories/store', [AdminController::class, 'store_categorie
 Route::get('/admin/tests/create', [AdminController::class, 'create_tests'])->name('admin.tests.create')->middleware(checkRole::class);
 
 Route::post('/admin/tests/create/store', [AdminController::class, 'store_tests'])->name('admin.tests.store')->middleware(checkRole::class);
+
+Route::get('/profile/complete-tests', [UserController::class, 'complete_tests'])->name('complete_tests')->middleware(authcheck::class);
+
+Route::post('/complete_test/send', [CourseController::class, 'complete_test_send'])->name('complete_test_send')->middleware(authcheck::class);
+
+Route::get('/profile/my_posts', [UserController::class, 'my_posts'])->name('my_posts')->middleware(authcheck::class);
+
+Route::get('/profile/my_posts/edit-post/{post}', [UserController::class, 'edit_post'])->name('edit_post')->middleware(authcheck::class);
+
+Route::post('/profile/edit-post/{post}/update}', [UserController::class, 'update_post'])->name('update_post')->middleware(authcheck::class);
+
+Route::delete('/profile/my_posts/delete/{post}', [UserController::class, 'delete_post'])->name('delete_post')->middleware(authcheck::class);
+
+Route::delete('/admin/courses/delete/{course}', [AdminController::class, 'delete_course'])->name('delete_course')->middleware(checkRole::class);
+
+Route::get('/admin/courses/edit/{course}', [AdminController::class, 'edit_course'])->name('edit_course')->middleware(checkRole::class);
+
+Route::post('/admin/courses/edit/{course}/update', [AdminController::class, 'update_course'])->name('update_course')->middleware(checkRole::class);
+
+Route::delete('/admin/courses/delete_instruction/{instruction}', [AdminController::class, 'delete_instruction'])->name('delete_instruction')->middleware(checkRole::class);
+
+Route::post('/admin/categories/delete', [AdminController::class, 'delete_category'])->name('delete_category')->middleware(checkRole::class);
+
+Route::post('/admin/categories/update', [AdminController::class, 'update_category'])->name('update_category')->middleware(checkRole::class);

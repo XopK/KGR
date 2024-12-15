@@ -6,10 +6,12 @@ use App\Models\CategoryCourse;
 use App\Models\CategoryPost;
 use App\Models\Course;
 use App\Models\CourseInstruction;
+use App\Models\Post;
 use App\Models\Test;
 use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -193,4 +195,165 @@ class AdminController extends Controller
         }
 
     }
+
+    public function delete_course(Course $course)
+    {
+        try {
+            $course->instructions->each(function ($instruction) {
+                Storage::delete('public/InstructionImage/' . $instruction->image_instruction);
+                $instruction->delete();
+            });
+
+            Storage::delete('public/coursesImage/' . $course->image);
+            $course->delete();
+
+            return redirect()->back()->with('success', 'Вы успешно удалили курс!');
+
+        } catch (Exception $e) {
+            Log::channel('tests')->error("Ошибка при удалении курса ID {$course->id}: " . $e->getMessage());
+            return redirect()->back()->with('error', 'Ошибка при удалении курса. Попробуйте еще раз.');
+        }
+    }
+
+    public function edit_course(Course $course)
+    {
+        $categories = CategoryCourse::orderBy('created_at', 'desc')->get();
+        return view('admin.edit_course', ['course' => $course, 'categories' => $categories]);
+    }
+
+    public function update_course(Request $request, Course $course)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'video_url' => 'required|url',
+            'category_id' => 'required',
+            'instructions' => 'required|array|min:1',
+            'instructions.*.text' => 'required|string',
+            'instructions.*.image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        try {
+            if ($request->hasFile('photo')) {
+                if ($course->image) {
+                    Storage::delete('public/coursesImage/' . $course->image);
+                }
+
+                $hashPhotoCourse = $request->file('photo')->hashName();
+                $request->file('photo')->storeAs('public/coursesImage', $hashPhotoCourse);
+
+                $course->image = $hashPhotoCourse;
+            }
+
+            $course->title = $request->title;
+            $course->description = $request->description;
+            $course->video_url = $request->video_url;
+            $course->category_id = $request->category_id;
+            $course->save();
+
+
+            foreach ($course->instructions as $index => $instruction) {
+                if (isset($request->instructions[$index])) {
+                    $instructionData = $request->instructions[$index];
+
+                    if (isset($instructionData['image']) && $instructionData['image'] instanceof \Illuminate\Http\UploadedFile) {
+
+                        if ($instruction->image_instruction) {
+                            Storage::delete('public/InstructionImage/' . $instruction->image_instruction);
+                        }
+
+                        $hashInstructionImage = $instructionData['image']->hashName();
+                        $instructionData['image']->storeAs('public/InstructionImage', $hashInstructionImage);
+
+                        $instruction->image_instruction = $hashInstructionImage;
+                    }
+
+                    $instruction->instruction = $instructionData['text'];
+                    $instruction->save();
+                }
+            }
+
+            $existingInstructionsCount = count($course->instructions);
+
+            foreach ($request->instructions as $index => $instructionData) {
+                if ($index >= $existingInstructionsCount) {
+                    $newInstruction = new CourseInstruction();
+                    $newInstruction->course_id = $course->id;
+                    $newInstruction->instruction = $instructionData['text'];
+                    $newInstruction->order = $index + 1;
+
+                    if (isset($instructionData['image']) && $instructionData['image'] instanceof \Illuminate\Http\UploadedFile) {
+                        $hashInstructionImageNew = $instructionData['image']->hashName();
+                        $instructionData['image']->storeAs('public/InstructionImage', $hashInstructionImageNew);
+
+                        $newInstruction->image_instruction = $hashInstructionImageNew;
+                    }
+
+                    $newInstruction->save();
+                }
+            }
+
+            return redirect()->route('admin.courses')->with('success', 'Курс успешно обновлён!');
+        } catch (Exception $e) {
+            Log::channel('tests')->error($e->getMessage());
+
+            return redirect()->back()->with('error', 'Ошибка при обновлении курса. Попробуйте еще раз!');
+        }
+
+
+    }
+
+    public function delete_instruction(CourseInstruction $instruction)
+    {
+        try {
+            if ($instruction->image_instruction) {
+                Storage::delete('public/InstructionImage/' . $instruction->image_instruction);
+            }
+            $instruction->delete();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Инструкция удалена!'
+            ]);
+
+        } catch (Exception $e) {
+            Log::channel('tests')->error($e->getMessage());
+
+            return response()->json([
+                'status' => false,
+                'message' => 'Ошибка при удалении инструкции. Попрбуйте еще раз.'
+            ]);
+        }
+
+    }
+
+    public function delete_category(Request $request)
+    {
+        try {
+            if ($request->type == 'course') {
+                $model = CategoryCourse::findOrFail($request->category_id);
+                $model->delete();
+            }
+
+            if ($request->type == 'post') {
+                $model = CategoryPost::findOrFail($request->category_id);
+                $model->delete();
+            }
+
+            return redirect()->route('admin.categories')->with('success', 'Категория успешно удалена!');
+        } catch (\Exception $e) {
+
+            \Log::error('Ошибка при удалении: ' . $e->getMessage());
+
+            return redirect()->route('admin.categories')->with('error', 'Ошибка при удалении категории.');
+        }
+    }
+
+    public function update_category(Request $request)
+    {
+        dd($request->all());
+    }
+
+
 }

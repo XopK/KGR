@@ -2660,6 +2660,18 @@ h3.question {
     text-align: center;
 }
 
+.fix-edit-block {
+    margin-top: -24px
+}
+
+@media (max-width: 768px) {
+    .fix-edit-block {
+        margin-top: 0;
+    }
+}
+
+
+
 
 
 

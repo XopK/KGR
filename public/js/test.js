@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     /*Массив с вопросами и ответами*/
     /*const questions = [{
         question: "Какой язык программирования используется для взаимодействия с браузером?",
@@ -58,23 +57,33 @@ $(document).ready(function () {
 
         if (selectedAnswer === correctAnswer) {
             counterQuestion++;
-            console.log('Правильный ответ!');
         } else {
             counterQuestion++;
             incorrectAnswers++;
-            console.log('Ответ Неверный!');
         }
 
         if (counterQuestion < questions.length) {
             updateQuestion();
         } else {
             progressBar.css('width', '100%');
-            console.log('Тест завершён!');
             const correctAnswers = questions.length - incorrectAnswers;
 
             let resultImage = correctAnswers >= (questions.length / 2) ? happyImage : sadImage;
             $('#resultImage').attr('src', resultImage);
             $('#resultText').text(`Вы ответили правильно на: ${correctAnswers} / ${counterQuestion} вопросов`)
+
+            $.ajax({
+                url: '/complete_test/send', // Укажите правильный URL на сервере
+                type: 'POST', data: {
+                    correctAnswers: correctAnswers,
+                    totalQuestions: counterQuestion,
+                    incorrectAnswers: incorrectAnswers,
+                    test_id: questions[0].test_id,
+                    _token: $('meta[name="csrf-token"]').attr('content')
+                }, success: function (response) {
+                }, error: function (xhr, status, error) {
+                }
+            });
 
             $.fancybox.open({
                 src: '#resultModal', type: 'inline', opts: {

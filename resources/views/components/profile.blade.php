@@ -28,13 +28,13 @@
                                     <i class="ti-briefcase mr-2"></i> Мои работы
                                 </a>
 
-                                <a href="#"
-                                   class="custom-btn">
+                                <a href="{{ route('my_posts') }}"
+                                   class="custom-btn {{ Request::is('profile/my_posts*') ? 'active' : '' }}">
                                     <i class="ti-pencil-alt mr-2"></i> Мои посты
                                 </a>
 
-                                <a href="#"
-                                   class="custom-btn">
+                                <a href="{{ route('complete_tests') }}"
+                                   class="custom-btn {{Request::routeIs('complete_tests') ? 'active' : ''}}">
                                     <i class="ti-check-box mr-2"></i> Пройденные тесты
                                 </a>
 
