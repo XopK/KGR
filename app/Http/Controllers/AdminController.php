@@ -6,6 +6,7 @@ use App\Models\CategoryCourse;
 use App\Models\CategoryPost;
 use App\Models\Course;
 use App\Models\CourseInstruction;
+use App\Models\Test;
 use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\Log;
@@ -135,11 +136,61 @@ class AdminController extends Controller
 
     public function create_tests()
     {
-        return view('admin.create_test');
+        $courses = Course::all();
+
+        return view('admin.create_test', ['courses' => $courses]);
     }
 
     public function store_tests(Request $request)
     {
-        dd($request->all());
+
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'course_id' => 'required',
+            'image_test' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'questions' => 'required|array|min:1',
+            'questions.*.text' => 'required|string',
+            'questions.*.answers' => 'required|array|min:2',
+            'questions.*.answers.*.text' => 'required|string',
+            'questions.*.correct' => 'required|integer|min:0',
+            'questions.*.photo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+        try {
+            $hashImageTest = $request->file('image_test')->hashName();
+            $request->file('image_test')->storeAs('public/TestImage', $hashImageTest);
+
+            $test = Test::create([
+                'name' => $request->name,
+                'description' => $request->description,
+                'course_id' => $request->course_id,
+                'image' => $hashImageTest,
+            ]);
+
+            foreach ($request->questions as $questionData) {
+                $hashQuestion = $questionData['photo']->hashName();
+                $questionData['photo']->storeAs('public/QuestionsImage', $hashQuestion);
+
+                $question = $test->questions()->create([
+                    'question_text' => $questionData['text'],
+                    'test_id' => $test->id,
+                    'photo' => $hashQuestion,
+                ]);
+
+                foreach ($questionData['answers'] as $index => $answerData) {
+                    $question->answers()->create([
+                        'question_id' => $question->id,
+                        'answer' => $answerData['text'],
+                        'is_correct' => $index === (int)$questionData['correct'],
+                    ]);
+                }
+            }
+
+            return redirect()->route('admin.tests')->with('success', 'Тест успешно создан!');
+        } catch (Exception $e) {
+            Log::channel('tests')->error($e->getMessage());
+            return redirect()->back()->with('error', 'Ошибка при создании теста. Попробуйте еще раз.');
+        }
+
     }
 }

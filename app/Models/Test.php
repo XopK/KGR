@@ -4,16 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CourseInstruction extends Model
+class Test extends Model
 {
-    protected $table = 'course_instructions';
+    //
+
+    protected $table = 'tests';
 
     protected $fillable = [
+        'name',
+        'description',
         'course_id',
-        'instruction',
-        'image_instruction',
-        'order',
+        'image'
     ];
+
+    public function questions()
+    {
+        return $this->hasMany(Question::class, 'test_id');
+    }
 
     public function course()
     {

@@ -63,4 +63,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Comment::class, 'user_id');
     }
+
+    public function works()
+    {
+        return $this->hasMany(UserWork::class, 'user_id');
+    }
 }

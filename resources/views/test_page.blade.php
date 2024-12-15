@@ -45,8 +45,8 @@
         </div>
 
         <div class="question-content">
-            <img src="https://imgholder.ru/1920x1080" alt="Вопрос" class="question-image">
-            <h3 class="question" id="questionText">Тест
+            <img src="https://imgholder.ru/1920x1080" alt="Вопрос" id="questionImage" class="question-image">
+            <h3 class="question" id="questionText">
             </h3>
         </div>
     </div>
@@ -54,10 +54,10 @@
     <!-- Блок для вариантов ответа -->
     <div class="answer-container">
         <div class="answer-buttons">
-            <button class="btn btn-primary answer-button">C++</button>
-            <button class="btn btn-primary answer-button">JavaScript</button>
-            <button class="btn btn-primary answer-button">Python</button>
-            <button class="btn btn-primary answer-button">Java</button>
+            <button class="btn btn-primary answer-button"></button>
+            <button class="btn btn-primary answer-button"></button>
+            <button class="btn btn-primary answer-button"></button>
+            <button class="btn btn-primary answer-button"></button>
         </div>
     </div>
 </div>
@@ -87,6 +87,9 @@
 <script src="/plugins/aos/aos.js"></script>
 
 <!-- CUSTOM SCRIPTS -->
+<script>
+    const questions = @json($questions);
+</script>
 <script src="/js/script.js"></script>
 <script src="/js/test.js"></script>
 </body>

@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     /*Массив с вопросами и ответами*/
-    const questions = [{
+    /*const questions = [{
         question: "Какой язык программирования используется для взаимодействия с браузером?",
         answers: ['C++', 'JavaScript', 'Python', 'GoLang'],
         correct: 'JavaScript',
@@ -13,12 +13,13 @@ $(document).ready(function () {
         question: "Что такое CSS?",
         answers: ["Стиль для страниц", "Машинное обучение", "Язык программирования", "Фреймворк"],
         correct: 'Стиль для страниц',
-    },];
+    },];*/
 
     let counterQuestion = 0;
     let incorrectAnswers = 0;
 
     const questionText = $('#questionText');
+    const imageQuestion = $('#questionImage')
     const progressBar = $('#progressBar');
     const answerButtons = $('.answer-button');
     const questionNumber = $('.question-number h2');
@@ -37,6 +38,13 @@ $(document).ready(function () {
         answerButtons.each(function (index) {
             $(this).text(current.answers[index]);
         });
+
+        if (current.photo) {
+            imageQuestion.attr('src', '/storage/public/QuestionsImage/' + current.photo);
+            imageQuestion.show();
+        } else {
+            imageQuestion.hide();
+        }
 
         const progress = (counterQuestion / questions.length) * 100;
         progressBar.css('width', `${progress}%`);

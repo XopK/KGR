@@ -131,9 +131,12 @@
                         <!-- Heading -->
                         <h2>История КГР</h2>
                         <!-- Promotional Speech -->
-                        <p style="color: #dad6d6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                            cupiditate delectus dolore ea eaque exercitationem, facere illum ipsa minus odit porro
-                            provident quaerat quam reiciendis, soluta suscipit ut voluptas voluptatum!</p>
+                        <p style="color: #dad6d6">
+                            Добро пожаловать в мир КГР — компании, чья история насчитывает десятилетия успеха и
+                            инноваций. Узнайте, как мы прошли путь от скромного начала до лидирующих позиций, открывая
+                            новые горизонты и преодолевая самые сложные вызовы. Это история стремления, амбиций и
+                            невероятных достижений.
+                        </p>
                         <!-- Popup Video -->
                         <a data-fancybox href="https://rutube.ru/video/79c3fb9d30369bda7f8fb04c293500e2/">
                             <i class="ti-control-play video"></i>
@@ -158,7 +161,7 @@
                             <div class="item">
                                 <div class="block shadow">
                                     <!-- Image -->
-                                    <a href="{{ route('lessons') }}">
+                                    <a href="{{ route('lessons', $course->id) }}">
                                         <img src="/storage/public/coursesImage/{{ $course->image }}"
                                              class="card-img-top"
                                              alt="{{ $course->image }}">
@@ -177,7 +180,8 @@
                                     </p>
 
                                     <!-- Button to Product -->
-                                    <a href="{{ route('lessons') }}" class="btn btn-primary">Перейти к курсу</a>
+                                    <a href="{{ route('lessons', $course->id) }}" class="btn btn-primary">Перейти к
+                                        курсу</a>
                                 </div>
                             </div>
                         @empty

@@ -2627,6 +2627,38 @@ h3.question {
     max-height: 400px; /* Для предотвращения переполнения */
 }
 
+.file-dropzone {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+.file-dropzone:hover, .file-dropzone.dragover {
+    border-color: #007bff;
+}
+
+.upload-icon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.upload-text {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+#file-list {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
 
 
 

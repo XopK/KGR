@@ -89,7 +89,7 @@
                             @forelse($courses as $course)
                                 <div class="col-md-6 mb-4">
                                     <div class="card h-100 p-3 rounded-lg">
-                                        <a href="{{ route('lessons') }}">
+                                        <a href="{{ route('lessons', $course->id) }}">
                                             <img src="/storage/public/coursesImage/{{ $course->image }}"
                                                  alt="{{ $course->image }}"
                                                  class="card-img-top img-fluid">
@@ -100,7 +100,8 @@
                                                style="max-height: 100px; overflow: hidden; text-overflow: ellipsis;">
                                                 {{ $course->description }}
                                             </p>
-                                            <a href="{{ route('lessons') }}" class="btn btn-outline-primary mt-auto">Подробнее</a>
+                                            <a href="{{ route('lessons', $course->id) }}"
+                                               class="btn btn-outline-primary mt-auto">Подробнее</a>
                                         </div>
                                     </div>
                                 </div>

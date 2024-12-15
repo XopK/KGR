@@ -4,19 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CourseInstruction extends Model
+class UserWork extends Model
 {
-    protected $table = 'course_instructions';
+    protected $table = 'user_works';
 
     protected $fillable = [
+        'user_id',
         'course_id',
-        'instruction',
-        'image_instruction',
-        'order',
+        'works',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 
     public function course()
     {
         return $this->belongsTo(Course::class, 'course_id');
     }
+
 }

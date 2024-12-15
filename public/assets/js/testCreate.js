@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     let questionIndex = 1;  // Начальный индекс для вопросов
-    let answerIndex = [0];  // Начальный индекс для каждого вопроса
+    let answerIndex = [1];  // Начальный индекс для каждого вопроса
 
     // Добавление нового вопроса
     $('#add-question').on('click', function () {
@@ -26,7 +26,7 @@ $(document).ready(function () {
                         <div class="answer-item d-flex align-items-center mb-2" data-answer-index="0">
                             <input type="text" name="questions[${questionIndex}][answers][0][text]" class="form-control mr-3" placeholder="Введите ответ">
                             <div class="form-check">
-                                <input type="radio" name="questions[${questionIndex}][correct]" class="form-check-input" value="${questionIndex}">
+                                <input type="radio" name="questions[${questionIndex}][correct]" class="form-check-input" value="0">
                                 <label class="form-check-label">Правильный</label>
                             </div>
                         </div>
@@ -37,15 +37,15 @@ $(document).ready(function () {
         `;
 
         $('#questions-container').append(questionHtml);
-        questionIndex++;
-        answerIndex.push(0); // Сохраняем индекс для следующего вопроса
+        questionIndex++;  // Увеличиваем индекс для следующего вопроса
+        answerIndex.push(1); // Сохраняем индекс для следующего ответа
     });
 
     // Добавление нового ответа
     $(document).on('click', '.add-answer', function () {
         const questionBlock = $(this).closest('.question-item');
         const currentQuestionIndex = questionBlock.data('question-index');
-        const currentAnswerIndex = answerIndex[currentQuestionIndex];
+        const currentAnswerIndex = answerIndex[currentQuestionIndex]; // Правильный индекс ответа для текущего вопроса
 
         const answerHtml = `
             <div class="answer-item d-flex align-items-center mb-2" data-answer-index="${currentAnswerIndex}">
@@ -67,6 +67,4 @@ $(document).ready(function () {
         $(this).siblings('.custom-file-label').addClass('selected').html(fileName);
     });
 
-
 });
-

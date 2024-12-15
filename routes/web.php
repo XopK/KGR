@@ -15,17 +15,15 @@ Route::get('/', function () {
     return view('index', ['courses' => $courses]);
 })->name('index');
 
-Route::get('/lesson', function () {
-    return view('practic_page');
-})->name('lessons');
+Route::get('/lesson/{course}', [CourseController::class, 'lessons_page'])->name('lessons');
 
 Route::get('/blog', function () {
     return view('blog');
 })->name('blog');
 
-Route::get('/lesson/questions', function () {
-    return view('test_page');
-})->name('questions');
+Route::get('/lesson/questions/{test}', [CourseController::class, 'question_page'])->name('questions')->middleware(authcheck::class);
+
+Route::post('/lesson/{course}/upload', [CourseController::class, 'upload'])->name('upload')->middleware(authcheck::class);
 
 Route::get('/blog/page', function () {
     return view('blog_single');

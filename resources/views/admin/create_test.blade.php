@@ -25,6 +25,29 @@
                                               placeholder="Введите описание теста"></textarea>
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="categoryType">Курс</label>
+                                    <select name="course_id" id="Course" class="form-control">
+                                        <option value="" disabled selected>Выберите курс</option>
+                                        @forelse($courses as $course)
+                                            <option value="{{$course->id}}">{{$course->title}}</option>
+                                        @empty
+                                            <option>Курсы отсутсвуют</option>
+                                        @endforelse
+
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="photo">Изображение теста</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="image_test"
+                                               accept="image/*">
+                                        <label class="custom-file-label" data-browse="Обзор">Выберите
+                                            файл</label>
+                                    </div>
+                                </div>
+
                                 <!-- Вопросы -->
                                 <div id="questions-container">
                                     <h5 class="mt-4">Вопросы</h5>
@@ -51,9 +74,9 @@
                                                 <h6>Ответы</h6>
                                                 <div class="answer-item d-flex align-items-center mb-2"
                                                      data-answer-index="0">
-                                                    <input type="text" name="questions[0][answers][0][text]"
-                                                           class="form-control mr-3"
-                                                           placeholder="Введите ответ">
+                                                    <input type="text"
+                                                           name="questions[0][answers][0][text]"
+                                                           class="form-control mr-3" placeholder="Введите ответ">
                                                     <div class="form-check">
                                                         <input type="radio" name="questions[0][correct]"
                                                                class="form-check-input" value="0">
@@ -65,6 +88,7 @@
                                                 ответ
                                             </button>
                                         </div>
+
                                     </div>
                                 </div>
 
