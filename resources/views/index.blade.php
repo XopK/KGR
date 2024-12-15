@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
     <!--====================================
     =            Hero Section            =
     =====================================-->
@@ -189,4 +189,4 @@
         </div>
     </section>
     <!--====  End of Testimonial  ====-->
-</x-layout>
+</x-Layout>

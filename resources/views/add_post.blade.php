@@ -4,7 +4,7 @@
         font-size: 16px;
     }
 </style>
-<x-layout>
+<x-Layout>
     <div class="d-flex flex-column min-vh-100 mt-2">
         <section class="addPost mt-3">
             <div class="container">
@@ -54,7 +54,7 @@
             </div>
         </section>
     </div>
-</x-layout>
+</x-Layout>
 
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 

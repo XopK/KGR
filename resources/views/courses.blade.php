@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
     <div class="d-flex flex-column min-vh-100 mt-2">
         <section class="allCourses mt-3">
             <div class="container">
@@ -127,4 +127,4 @@
             </div>
         </section>
     </div>
-</x-layout>
+</x-Layout>

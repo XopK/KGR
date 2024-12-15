@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <div class="d-flex flex-column min-vh-100 mt-2">
         <section class="forum-page mt-3">
@@ -107,7 +107,7 @@
             </div>
         </section>
     </div>
-</x-layout>
+</x-Layout>
 <script src="/js/ajax.js">
 
 </script>

@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
     <!--====================================
 =            Single Article            =
 =====================================-->
@@ -226,4 +226,4 @@
         </div>
     </section>
     <!--====  End of Related Article  ====-->
-</x-layout>
+</x-Layout>

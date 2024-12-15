@@ -58,34 +58,33 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('courses') }}">Все уроки</a></li>
                         @forelse($categories_courses_header as $header)
-                            <li><a class="dropdown-item" href="{{ route('courses') }}">{{ $header->name_category }}</a>
+                            <li><a class="dropdown-item" href="{{ route('courses') }}">{{$header->name_category}}</a>
                             </li>
-                    @empty
-                    @endforelse
+                        @empty
+                        @endforelse
+                    </ul>
                 </li>
-            </ul>
-            </li>
 
-            <li class="nav-item {{ Request::is('forum*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('forum') }}">Форум</a>
-            </li>
+                <li class="nav-item {{ Request::is('forum*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('forum') }}">Форум</a>
+                </li>
 
-            <li class="nav-item {{ Request::routeIs('blog') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('blog') }}">Статьи</a>
-            </li>
-            @auth
-                <li class="nav-item {{ Request::is('profile*') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('my_profile') }}">Личный
-                        кабинет</a>
+                <li class="nav-item {{ Request::routeIs('blog') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('blog') }}">Статьи</a>
                 </li>
-            @endauth
-            @guest
-                <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer;" data-toggle="modal" data-target="#authModal">Личный
-                        кабинет</a>
-                </li>
+                @auth
+                    <li class="nav-item {{ Request::is('profile*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('my_profile') }}">Личный
+                            кабинет</a>
+                    </li>
+                @endauth
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" style="cursor: pointer;" data-toggle="modal" data-target="#authModal">Личный
+                            кабинет</a>
+                    </li>
                 @endguest
-                </ul>
+            </ul>
         </div>
     </div>
 </nav>

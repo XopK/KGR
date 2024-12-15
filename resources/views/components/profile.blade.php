@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
     <div class="d-flex flex-column min-vh-100 mt-2">
         <section class="personal-account flex-grow-1">
             <div class="container py-4">
@@ -65,4 +65,4 @@
             </div>
         </section>
     </div>
-</x-layout>
+</x-Layout>
