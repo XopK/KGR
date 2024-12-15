@@ -7,6 +7,7 @@ use App\Http\Controllers\ForumController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\checkRole;
 use App\Http\Middleware\authcheck;
+use App\Models\Blog;
 use App\Models\Course;
 use Illuminate\Support\Facades\Route;
 
@@ -18,16 +19,17 @@ Route::get('/', function () {
 Route::get('/lesson/{course}', [CourseController::class, 'lessons_page'])->name('lessons');
 
 Route::get('/blog', function () {
-    return view('blog');
+
+    $blogs = Blog::orderBy('created_at', 'desc')->get();
+    return view('blog', ['blogs' => $blogs]);
+
 })->name('blog');
 
 Route::get('/lesson/questions/{test}', [CourseController::class, 'question_page'])->name('questions')->middleware(authcheck::class);
 
 Route::post('/lesson/{course}/upload', [CourseController::class, 'upload'])->name('upload')->middleware(authcheck::class);
 
-Route::get('/blog/page', function () {
-    return view('blog_single');
-})->name('blog_single');
+Route::get('/blog/{blog}', [ForumController::class, 'blog_page'])->name('blog_single');
 
 Route::post('/auth/register', [AuthController::class, 'registration'])->name('register');
 
@@ -110,3 +112,7 @@ Route::delete('/admin/courses/delete_instruction/{instruction}', [AdminControlle
 Route::post('/admin/categories/delete', [AdminController::class, 'delete_category'])->name('delete_category')->middleware(checkRole::class);
 
 Route::post('/admin/categories/update', [AdminController::class, 'update_category'])->name('update_category')->middleware(checkRole::class);
+
+Route::get('/admin/blogs/create', [AdminController::class, 'create_blogs'])->name('admin.blogs.create')->middleware(checkRole::class);
+
+Route::post('/admin/blogs/create/store', [AdminController::class, 'store_blogs'])->name('admin.blogs.store')->middleware(checkRole::class);

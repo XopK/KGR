@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="page-title">Статьи</h4>
-                <a href="#" class="btn btn-primary">Создать статью</a>
+                <a href="{{ route('admin.blogs.create') }}" class="btn btn-primary">Создать статью</a>
             </div>
             <div class="row">
                 <div class="col-md-12">

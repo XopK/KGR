@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\CategoryCourse;
 use App\Models\CategoryPost;
 use App\Models\Course;
@@ -10,8 +11,10 @@ use App\Models\Post;
 use App\Models\Test;
 use Illuminate\Http\Request;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
@@ -355,5 +358,57 @@ class AdminController extends Controller
         dd($request->all());
     }
 
+    public function create_blogs()
+    {
+        return view('admin.create_blog');
+    }
+
+    public function store_blogs(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'content' => 'required',
+            'photo_preview' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+        try {
+            $user = Auth::user();
+
+            $hashPreview = $request->file('photo_preview')->hashName();
+            $request->file('photo_preview')->storeAs('public/blogsImage', $hashPreview);
+
+            $content = $request->input('content');
+            preg_match_all('/<img[^>]+src="data:image\/([^;]+);base64,([^"]+)"/', $content, $matches);
+
+            if (count($matches) > 0) {
+                foreach ($matches[0] as $index => $base64String) {
+                    $extension = $matches[1][$index]; // Получаем расширение изображения (jpeg, png, и т.д.)
+                    $imageData = base64_decode($matches[2][$index]); // Декодируем base64 данные
+
+                    // Генерируем уникальное имя для файла
+                    $imageName = 'image_' . Str::random(10) . '.' . $extension;
+
+                    // Сохраняем изображение в папку public/images
+                    $imagePath = 'public/blogs/' . $imageName;
+                    Storage::put($imagePath, $imageData);
+
+                    $content = str_replace($base64String, asset('storage/public/blogs/' . $imageName), $content);
+                }
+            }
+
+            $blog = Blog::create([
+                'title' => $request->title,
+                'description' => $request->description,
+                'user_id' => $user->id,
+                'content' => $content,
+                'photo_preview' => $hashPreview,
+            ]);
+
+            return redirect()->route('admin.blogs')->with('success', 'Статья успешно создана!');
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', 'Произошла ошибка при создании статьи. Попробуйте еще раз!');
+        }
+
+    }
 
 }

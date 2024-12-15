@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\CategoryPost;
 use App\Models\Comment;
 use App\Models\LikePost;
@@ -130,6 +131,11 @@ class ForumController extends Controller
                 'comment' => null,
             ]);
         }
+    }
+
+    public function blog_page(Blog $blog)
+    {
+        return view('blog_single', ['blog' => $blog]);
     }
 
 }
