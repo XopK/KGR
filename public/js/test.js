@@ -73,7 +73,7 @@ $(document).ready(function () {
             $('#resultText').text(`Вы ответили правильно на: ${correctAnswers} / ${counterQuestion} вопросов`)
 
             $.ajax({
-                url: '/complete_test/send', // Укажите правильный URL на сервере
+                url: '/complete_test/send',
                 type: 'POST', data: {
                     correctAnswers: correctAnswers,
                     totalQuestions: counterQuestion,
